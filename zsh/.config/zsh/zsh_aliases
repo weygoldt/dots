@@ -1,0 +1,135 @@
+# VARIABLES --------------------------------------------------------------------
+# Source my API keys
+source $HOME/.config/zsh/api_keys
+
+phonepath=$HOME/Phone
+scriptspath=$HOME/.scripts
+unipath=$HOME/Uni
+
+# ALIASES ----------------------------------------------------------------------
+
+# Good morning
+alias morning="python -m rich.markdown $scriptspath/morning.md"
+alias work="cd $HOME/Projects/mscthesis && nvim ."
+
+# dotfiles
+alias dfs="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dfsc="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME commit -am"
+alias dfstracked="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME ls-tree --full-tree -r --name-only HEAD" # list tracked dotfiles
+alias dfslog="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME log --graph --oneline --decorate" # list tracked dotfiles
+
+# git helpers
+alias gittracked='git ls-tree --full-tree -r --name-only HEAD' # list tracked
+alias gitc='git commit -am' # changes and deletions
+alias gitca='git add . && git commit -m' # stage and commit all files
+
+# The only git alias I need for my data science workflow
+# do NOT use this if your .gitignore is not set up properly
+gt () {
+    git add . && git commit -m "$1" && git pull && git push
+}
+
+# Download helpers
+alias audiodl='youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 5'
+alias videodl='youtube-dl -f best'
+
+# Latex, markdown, pandoc
+alias md2pdf='zsh $scriptspath/markdown_to_pdf.sh'
+
+# Most used paths
+alias uni='cd $unipath'
+
+# Faster python
+alias py='python3'
+
+# Open text editors
+alias v='nvim' # neovim
+alias vim='nvim'
+alias hx='helix'
+alias code='code --password-store=kwallet5 --enable-features=UseOzonePlatform --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto'
+
+# Shell helpers
+alias lss='exa -ah --icons --group-directories-first' # list all files
+alias lsa='exa -alh --group-directories-first' # list files with all info
+alias lst='exa --tree --icons' # list a directory tree
+alias lsp='exa --tree --icons --ignore-glob="*.pyc|__pycache__"' # list a directory tree without pyc files
+alias cl='clear'
+alias cat='bat --theme="Catppuccin-mocha"' # use bat as cat
+alias feh='feh --scale-down --auto-zoom'
+alias cnt='find . -type f | wc -l'
+alias ..="cd .."
+alias ...="cd ../.."
+alias md="python -m rich.markdown"
+alias rm="rm -i"
+alias ran="source ranger"
+alias cop="gh copilot suggest"
+
+alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | rg ^/dev/ | sort" # list mounted drives only
+alias copy='rsync -ah --info=progress2' # copy with progress bar
+alias trs='gio trash' # put something into the trash
+
+alias mtrx='cmatrix -abrks'
+
+# System utilities
+alias update='$scriptspath/updater.sh'
+alias clean='$scriptspath/cleaner.sh'
+# alias sync="unison work"
+alias backuphome='$scriptspath/borgbackup_home.sh'
+alias pacman="sudo pacman --color auto"
+
+# Mount IPhone
+alias mountphone='ifuse $phonepath'
+alias dismountphone='sudo umount $phonepath'
+
+# Temporary aliases
+alias lsync='~/.scripts/synclab.sh'
+
+# FUNCTIONS --------------------------------------------------------------------
+
+# Backup a directory with rsync. Syntax is backup <source> <backupdir>.
+backup () {
+    sudo rsync -aAXv --delete --exclude='/dev/*' --exclude='/proc/*' --exclude='/sys/*' --exclude='/tmp/*' --exclude='/run/*' --exclude='/mnt/*' --exclude='/media/*' --exclude='/home/*' --exclude='/lost+found' "$1" "$2"
+}
+# Restore a directory with rsync. Syntax is restore <backupdir> <restoredir>.
+restore () {
+    sudo rsync -aAXv --delete $1 $2
+}
+
+# Append pdf to each other
+pdfappend () {
+    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="$3" "$1" "$2"
+}
+
+# show the list of packages that need this package - depends mpv as example
+function_depends()  {
+    search=$(echo "$1")
+    sudo pacman -Sii $search | grep "Required" | sed -e "s/Required By     : //g" | sed -e "s/  /\n/g"
+    }
+alias depends='function_depends'
+
+# # ex = EXtractor for all kinds of archives
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   tar xf $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}

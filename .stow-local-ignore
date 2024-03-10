@@ -1,0 +1,6 @@
+\.git
+#LICENSE
+^/.*\.org
+.scripts/
+.system/
+.assets/

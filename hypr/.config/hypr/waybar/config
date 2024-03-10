@@ -1,0 +1,70 @@
+{
+  "include": "~/.config/hypr/waybar/modules",
+  "layer": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 0,
+  "position": "bottom",
+  "spacing": 0,
+  "fixed-center": true,
+  "ipc": true,
+  "margin-left": 0,
+  "margin-right": 0,
+
+  "modules-left": ["hyprland/workspaces", "cpu", "memory", "disk", "custom/gpu-usage", "custom/gpu-ram", "battery", "custom/updater"],
+  "modules-center": ["custom/padd", "custom/spotify", "custom/padd"],
+  "modules-right": ["network", "custom/padd", "pulseaudio", "backlight", "clock", "custom/padd"],
+
+// modules for padding //
+
+	"custom/bar": {
+		"format": "|",
+		"interval": "once",
+		"tooltip": false
+	},
+
+    "custom/l_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/r_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/padd": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    }
+
+}
