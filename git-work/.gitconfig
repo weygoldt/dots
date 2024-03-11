@@ -1,0 +1,46 @@
+[user]
+	name = weygoldt
+	email = 88969563+weygoldt@users.noreply.github.com
+	signingkey = .ssh/id_ed25519.pub
+	; signinkey = 25A8A95B66767821
+[alias]
+	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
+	tracked="ls-tree --full-tree -r --name-only HEAD"
+    	log="log --graph --oneline --decorate"
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+	ui = true
+[core]
+	editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[credential]
+	helper = cache --timeout=3600
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	; program = /opt/1Password/op-ssh-sign
+	; program = /usr/bin/ssh
+[commit]
+	; gpgsign = true
+[init]
+	defaultBranch = main
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse

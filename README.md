@@ -1,6 +1,6 @@
 # Welcome to my linux dotfiles
 
-**UPDATE:** I moved from managing my config via a bare git repository to GNU stow. This essentially symlinks all config files to where they belong while the original files remain at `~/.dotfiles`. The big advantage is, that I can dynamically symlink - and unlink - just parts of my config. When working on a remote server for example, I can just link my neovim and tmux config, without having to clutter the .config directory with my window manager configurations as well.
+**UPDATE:** I moved from managing my config via a bare git repository to GNU stow. This essentially symlinks all config files to where they belong while the original files remain at `~/.dotfiles`. The big advantage is, that I can dynamically symlink - and unlink - just parts of my config. When working on a remote server for example, I can just link my neovim and tmux config, without having to clutter the .config directory with my window manager configurations as well. The different config files between my home and work machine for example are automatically managed by my Makefile.
 
 This repository includes my personal configuration files for my Arch linux workstation.
 It is designed to be minimal, bleeding edge, but still beautiful. Almost everything is configurable by text files. Most files can be used on other GNU/Linux distributions as well but some scripts only work on Arch-based systems.
