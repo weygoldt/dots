@@ -15,7 +15,7 @@ return {
         latexindent = {
           command = 'latexindent',
           inherit = true,
-          prepend_args = { '-l', '-m' },
+          prepend_args = { '-w', '-l', '-m' },
         },
       },
 

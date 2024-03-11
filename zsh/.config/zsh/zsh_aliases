@@ -76,6 +76,11 @@ alias dismountphone='sudo umount $phonepath'
 # Temporary aliases
 alias lsync='~/.scripts/synclab.sh'
 
+# remote hacking on wayland machines
+wssh () {
+    waypipe ssh $1 env QT_QPA_PLATFORM="wayland-egl" QT_QPA_PLATFORMTHEME="KDE" $2
+}
+
 # FUNCTIONS --------------------------------------------------------------------
 
 # Backup a directory with rsync. Syntax is backup <source> <backupdir>.
