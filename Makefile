@@ -33,7 +33,7 @@ $(OVERRIDES):
 
 # Stow the program configurations
 $(PROGRAMS):
-	@echo "Stowing $@ for $(HOSTNAME)..."
+	@echo "Stowing $@ ..."
 	@stow -d $(DOTFILES_DIR) -S $@
 
 # Update the symlinks for all programs and host-specific overrides

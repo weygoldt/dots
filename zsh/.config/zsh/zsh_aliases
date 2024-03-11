@@ -12,12 +12,6 @@ unipath=$HOME/Uni
 alias morning="python -m rich.markdown $scriptspath/morning.md"
 alias work="cd $HOME/Projects/mscthesis && nvim ."
 
-# dotfiles
-alias dfs="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias dfsc="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME commit -am"
-alias dfstracked="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME ls-tree --full-tree -r --name-only HEAD" # list tracked dotfiles
-alias dfslog="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME log --graph --oneline --decorate" # list tracked dotfiles
-
 # git helpers
 alias gittracked='git ls-tree --full-tree -r --name-only HEAD' # list tracked
 alias gitc='git commit -am' # changes and deletions
@@ -45,21 +39,20 @@ alias py='python3'
 # Open text editors
 alias v='nvim' # neovim
 alias vim='nvim'
-alias hx='helix'
 alias code='code --password-store=kwallet5 --enable-features=UseOzonePlatform --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto'
 
 # Shell helpers
+alias ls='exa --icons --group-directories-first' # list files
 alias lss='exa -ah --icons --group-directories-first' # list all files
 alias lsa='exa -alh --group-directories-first' # list files with all info
 alias lst='exa --tree --icons' # list a directory tree
 alias lsp='exa --tree --icons --ignore-glob="*.pyc|__pycache__"' # list a directory tree without pyc files
 alias cl='clear'
 alias cat='bat --theme="Catppuccin-mocha"' # use bat as cat
-alias feh='feh --scale-down --auto-zoom'
 alias cnt='find . -type f | wc -l'
 alias ..="cd .."
 alias ...="cd ../.."
-alias md="python -m rich.markdown"
+alias ....="cd ../../.."
 alias rm="rm -i"
 alias ran="source ranger"
 alias cop="gh copilot suggest"
@@ -73,7 +66,6 @@ alias mtrx='cmatrix -abrks'
 # System utilities
 alias update='$scriptspath/updater.sh'
 alias clean='$scriptspath/cleaner.sh'
-# alias sync="unison work"
 alias backuphome='$scriptspath/borgbackup_home.sh'
 alias pacman="sudo pacman --color auto"
 

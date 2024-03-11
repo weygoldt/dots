@@ -66,4 +66,7 @@ vim.o.hlsearch = true
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 
+-- Set the height of the command-line to 2
+vim.opt.cmdheight = 0
+
 -- vim: ts=2 sts=2 sw=2 et
