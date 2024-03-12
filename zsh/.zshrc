@@ -1,4 +1,3 @@
-# Enable colors and change prompt:
 # source zsh aliases
 source $HOME/.config/zsh/zsh_aliases
 
