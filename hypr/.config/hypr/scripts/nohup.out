@@ -1743,3 +1743,1017 @@ Traceback (most recent call last):
   File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 74, in signal_handler
     sys.stdout.flush()
 RuntimeError: reentrant call inside <_io.BufferedWriter name='<stdout>'>
+[LOG] Welcome to hyprpaper!
+built from commit  ()
+[LOG] Cleaned old hyprpaper preloads (1), removing 8.3MB
+[LOG] Preloaded target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg in 13.26ms -> Pixel size: [2400, 1600]
+[LOG] hyprpaper socket started at /tmp/hypr/1c460e98f870676b15871fe4e5bfeb1a32a3d6d8_1711135157/.hyprpaper.sock (fd: 4)
+[LOG] Buffer created for target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 8.3MB
+[WARN] Monitor HDMI-A-1 does not have a target! A wallpaper will not be created.
+[WARN] Monitor eDP-1 does not have a target! A wallpaper will not be created.
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Unloading target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, preload path /run/user/1000/.hyprpaper_VeToqJ
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers//milkyway.jpg
+[LOG] Preloaded target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers//milkyway.jpg in 374.95ms -> Pixel size: [6016, 4016]
+[LOG] Buffer created for target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers//milkyway.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 8.3MB
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper , /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers//milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Unloading target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers//milkyway.jpg, preload path /run/user/1000/.hyprpaper_UTcIg3
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Preloaded target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg in 12.51ms -> Pixel size: [2400, 1600]
+[LOG] Buffer created for target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 8.3MB
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper , /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Unloading target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, preload path /run/user/1000/.hyprpaper_RNEzoG
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Preloaded target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg in 10.58ms -> Pixel size: [2400, 1600]
+[LOG] Buffer created for target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 8.3MB
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1
+eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Unloading target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, preload path /run/user/1000/.hyprpaper_EjLHp8
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Preloaded target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg in 9.15ms -> Pixel size: [2400, 1600]
+[LOG] Buffer created for target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 8.3MB
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1
+eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: list
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: list
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Unloading target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, preload path /run/user/1000/.hyprpaper_AoRoJk
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Preloaded target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg in 8.92ms -> Pixel size: [2400, 1600]
+[LOG] Buffer created for target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 8.3MB
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74000cd0
+[LOG] handlePreferredScale: 1.00 for 7fdd74000cd0
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 74000cd0
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74000cd0
+[LOG] handlePreferredScale: 1.00 for 7fdd74000cd0
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 74000cd0
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001310
+[LOG] handlePreferredScale: 1.00 for 7fdd74001310
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 74001310
+[LOG] handlePreferredScale: 1.00 for 7fdd74000cd0
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001310
+[LOG] handlePreferredScale: 1.00 for 7fdd74001310
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 74001310
+[LOG] handlePreferredScale: 1.00 for 7fdd74001310
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e5c0
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e5c0
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 74804b20
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e5c0
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 74804b20
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e5c0
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e5c0
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e5c0
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e5c0
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Preloaded target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg in 364.25ms -> Pixel size: [6016, 4016]
+[LOG] Buffer created for target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 16.6MB
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e520
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e520
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e570
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e570
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Unloading target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, preload path /run/user/1000/.hyprpaper_S9THNT
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 74001360
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] Preloaded target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg in 9.24ms -> Pixel size: [2400, 1600]
+[LOG] Buffer created for target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 16.6MB
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 74001360
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e890
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e890
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e890
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e890
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e890
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e890
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e890
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 74804b20
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 74804b20
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e570
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e570
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Unloading target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, preload path /run/user/1000/.hyprpaper_LlIZTH
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Preloaded target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg in 12.46ms -> Pixel size: [2400, 1600]
+[LOG] Buffer created for target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 16.6MB
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df20
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df20
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0df20
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df20
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df20
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0df20
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0df70
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df20
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0df70
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e5c0
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e5c0
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e5c0
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e5c0
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e5c0
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e5c0
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e5c0
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e520
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e570
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e570
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 74001360
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 74001360
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0df70
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0df70
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e890
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e890
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e890
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e890
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e890
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e890
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e890
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e520
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e520
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 74804b20
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 74804b20
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 74001360
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 74001360
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df20
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df20
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0df20
+[LOG] handlePreferredScale: 1.00 for 7fdd74001360
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df20
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df20
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0df20
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df20
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Unloading target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg, preload path /run/user/1000/.hyprpaper_hC5zw9
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Preloaded target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg in 364.60ms -> Pixel size: [6016, 4016]
+[LOG] Buffer created for target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 16.6MB
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e520
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e520
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001270
+[LOG] handlePreferredScale: 1.00 for 7fdd74001270
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 74001270
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001270
+[LOG] handlePreferredScale: 1.00 for 7fdd74001270
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 74001270
+[LOG] handlePreferredScale: 1.00 for 7fdd74001270
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e570
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e570
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e570
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e10230
+[LOG] handlePreferredScale: 1.00 for 7fdd75e10230
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e10230
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e10230
+[LOG] handlePreferredScale: 1.00 for 7fdd75e10230
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e10230
+[LOG] handlePreferredScale: 1.00 for 7fdd75e10230
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75dfe1b0
+[LOG] handlePreferredScale: 1.00 for 7fdd75dfe1b0
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75dfe1b0
+[LOG] Received a request: unload all
+[LOG] Unloading target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg, preload path /run/user/1000/.hyprpaper_Tlavz7
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75dfe1b0
+[LOG] handlePreferredScale: 1.00 for 7fdd75dfe1b0
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75dfe1b0
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0df70
+[LOG] handlePreferredScale: 1.00 for 7fdd75dfe1b0
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0df70
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0df70
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Preloaded target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg in 362.89ms -> Pixel size: [6016, 4016]
+[LOG] Buffer created for target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 16.6MB
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001270
+[LOG] handlePreferredScale: 1.00 for 7fdd74001270
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 74001270
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001270
+[LOG] handlePreferredScale: 1.00 for 7fdd74001270
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 74001270
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd74001270
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 75e0e520
+[LOG] handlePreferredScale: 1.00 for 7fdd75e0e520
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75dfe1b0
+[LOG] handlePreferredScale: 1.00 for 7fdd75dfe1b0
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75dfe1b0
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75dfe1b0
+[LOG] handlePreferredScale: 1.00 for 7fdd75dfe1b0
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75dfe1b0
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] handlePreferredScale: 1.00 for 7fdd75dfe1b0
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e105e0
+[LOG] handlePreferredScale: 1.00 for 7fdd75e105e0
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e105e0
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd75e105e0
+[LOG] handlePreferredScale: 1.00 for 7fdd75e105e0
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 75e105e0
+[LOG] handlePreferredScale: 1.00 for 7fdd75e105e0
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Unloading target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, preload path /run/user/1000/.hyprpaper_WbN17g
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, 
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, 
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, 
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, 
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, 
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, 
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload grad1.png
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, grad1.png
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Preloaded target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg in 8.85ms -> Pixel size: [2400, 1600]
+[LOG] Buffer created for target /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 16.6MB
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper HDMI-A-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: unload all
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 74804b20
+[LOG] Received a request: preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Ignoring request to preload /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg as it already is preloaded!
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Received a request: wallpaper eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg
+[LOG] Accepted incoming socket connection request on fd 5
+[LOG] Closing Accepted Connection
+[LOG] configure for HDMI-A-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] Image data for HDMI-A-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg at [0.00, -125.00], scale: 0.80 (original image size: [2400, 1600])
+[LOG] Submitting viewport dest size 1920x1080 for 74804b20
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001310
+[LOG] handlePreferredScale: 1.00 for 7fdd74001310
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 74001310
+[LOG] handlePreferredScale: 1.00 for 7fdd74804b20
+[LOG] configure for eDP-1
+[LOG] handlePreferredScale: 1.00 for 7fdd74001310
+[LOG] handlePreferredScale: 1.00 for 7fdd74001310
+[LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
+[LOG] Submitting viewport dest size 1920x1080 for 7400131

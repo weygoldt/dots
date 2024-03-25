@@ -20,7 +20,7 @@ fi
 
 # Perform a dry-run preview of changes
 echo "Preview of changes:"
-rsync -avz --delete --dry-run $source_dir $destination_dir
+rsync -avzt --delete --dry-run $source_dir $destination_dir
 
 # Ask user for confirmation
 read -p "Do you want to sync these changes? (yes/no): " answer
@@ -29,7 +29,7 @@ read -p "Do you want to sync these changes? (yes/no): " answer
 if [[ $answer =~ ^[Yy][Ee][Ss]$ ]]; then
     echo "Syncing directories..."
     # Perform sync without dry-run
-    rsync -avz --delete "$source_dir" "$destination_dir"
+    rsync -avzt --delete "$source_dir" "$destination_dir"
     echo "Sync completed."
 elif [[ $answer =~ ^[Nn][Oo]$ ]]; then
     echo "Sync operation declined. Exiting."
