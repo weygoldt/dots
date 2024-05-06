@@ -76,6 +76,10 @@ alias dismountphone='sudo umount $phonepath'
 # Temporary aliases
 alias lsync='~/.scripts/synclab.sh'
 
+# Hyprland toggle mirror
+alias mirror='hyprctl keyword monitor ,preferred,auto,1,mirror,eDP-1'
+alias unmirror='hyprctl keyword monitor ,preferred,auto,1'
+
 # remote hacking on wayland machines
 wssh () {
     waypipe ssh $1 env QT_QPA_PLATFORM="wayland-egl" QT_QPA_PLATFORMTHEME="KDE" $2

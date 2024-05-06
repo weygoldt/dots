@@ -2756,4 +2756,121 @@ eDP-1, /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/grad2.jpg
 [LOG] handlePreferredScale: 1.00 for 7fdd74001310
 [LOG] handlePreferredScale: 1.00 for 7fdd74001310
 [LOG] Image data for eDP-1: /home/weygoldt/.dotfiles/hypr/.config/hypr/wallpapers/milkyway.jpg at [0.00, -316.00], scale: 0.32 (original image size: [6016, 4016])
-[LOG] Submitting viewport dest size 1920x1080 for 7400131
+[LOG] Submitting viewport dest size 1920x1080 for 7400131==> ERROR: Cannot fetch updates
+corrupted size vs. prev_size
+./statusbar: line 8: 49596 Aborted                 (core dumped) waybar --bar main-bar --log-level error --config ${CONFIG} --style ${STYLE}
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+Traceback (most recent call last):
+Exception ignored in: <module 'threading' from '/usr/lib/python3.11/threading.py'>
+object address  : 0x739f1f5cac20
+object refcount : 2
+Traceback (most recent call last):
+object type     : 0x739f20df8420
+object type name: RuntimeError
+  File "/usr/lib/python3.11/threading.py", line 1541, in _shutdown
+object repr     : RuntimeError("reentrant call inside <_io.BufferedWriter name='<stdout>'>")
+lost sys.stderr
+    def _shutdown():
+    
+  File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 76, in signal_handler
+    sys.exit(0)
+SystemExit: 0
+Terminated
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+Terminated
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+Terminated
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/site-packages/gi/_ossighelper.py", line 92, in signal_notify
+    def signal_notify(source, condition):
+
+  File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 72, in signal_handler
+    logger.debug('Received signal to stop, exiting')
+  File "/usr/lib/python3.11/logging/__init__.py", line 1467, in debug
+    def debug(self, msg, *args, **kwargs):
+
+  File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 74, in signal_handler
+    sys.stdout.flush()
+  File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 74, in signal_handler
+    sys.stdout.flush()
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stdout>'>
+Terminated
+[2024-05-06 22:53:18.371] [error] Error parsing JSON: * Line 247, Column 3
+  Missing ',' or '}' in object declaration
+
+[2024-05-06 22:53:26.197] [error] Error parsing JSON: * Line 247, Column 3
+  Missing ',' or '}' in object declaration
+
+[2024-05-06 22:53:33.402] [error] Error parsing JSON: * Line 247, Column 3
+  Missing ',' or '}' in object declaration
+
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/site-packages/gi/_ossighelper.py", line 92, in signal_notify
+    def signal_notify(source, condition):
+
+  File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 71, in signal_handler
+    def signal_handler(sig, frame):
+    
+  File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 74, in signal_handler
+    sys.stdout.flush()
+  File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 74, in signal_handler
+    sys.stdout.flush()
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stdout>'>
+Terminated
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+Terminated
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+==> ERROR: Cannot fetch updates
+Terminated
+[2024-05-06 23:08:06.191] [error] Error parsing JSON: * Line 123, Column 13
+  Bad escape sequence in string
+See Line 123, Column 54 for detail.
+
+[2024-05-06 23:08:26.067] [error] Error parsing JSON: * Line 123, Column 13
+  Bad escape sequence in string
+See Line 123, Column 54 for detail.
+
+==> ERROR: Cannot fetch updates
