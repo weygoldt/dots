@@ -1,5 +1,5 @@
 {
-  "include": "~/.config/hypr/waybar/modules",
+  "include": "~/.config/hypr/waybar/modules.jsonc",
   "layer": "top",
   "mod": "dock",
   "exclusive": true,
@@ -17,13 +17,13 @@
   "modules-center": ["custom/padd", "custom/spotify", "custom/padd"],
   "modules-right": ["battery", "network", "pulseaudio", "backlight", "clock"],
 
-// modules for padding //
+    // modules for padding //
 
-	"custom/bar": {
-		"format": "|",
-		"interval": "once",
-		"tooltip": false
-	},
+    "custom/bar": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
 
     "custom/l_end": {
         "format": " ",

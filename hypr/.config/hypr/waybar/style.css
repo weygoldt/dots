@@ -2,7 +2,8 @@
   border: none;
   border-radius: 0px;
   font-family: "JetBrainsMono Nerd Font";
-  font-size: 11px;
+  font-weight: bold;
+  font-size: 10px;
   min-height: 10px;
 }
 
@@ -11,8 +12,7 @@ window#waybar {
 }
 
 tooltip {
-  border-radius: 10px;
-  /* background: #000000; */
+  background: rgba(0, 0, 0, 0.5);
   color: #cdd6f4;
   border-radius: 7px;
   border-width: 0px;
@@ -23,9 +23,8 @@ tooltip {
   padding-left: 10px;
   padding-right: 10px;
   color: #585b70;
-  /* background: #000000; */
-  animation: gradient_f 20s ease-in infinite;
   transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+  animation: gradient_f 20s ease-in infinite;
 }
 
 #workspaces button.active {
@@ -75,14 +74,12 @@ tooltip {
 #window,
 #network {
   color: #e0def4;
-  /* background: #000000; */
   opacity: 1;
   margin: 3px 0px 3px 0px;
   padding-left: 10px;
   padding-right: 10px;
   margin-right: 0px;
   margin-top: 4px;
-  /* margin-bottom: 2px; */
 }
 
 #cpu,
@@ -92,7 +89,7 @@ tooltip {
 #custom-gpu-ram,
 #custom-gpu-usage {
   /* color: #9ccfd8; */
-  background: rgba(0, 0, 0, 0);
+  /* background: rgba(0, 0, 0, 0); */
 }
 
 #custom-l_end,
@@ -116,7 +113,7 @@ tooltip {
 }
 
 #battery.critical:not(.charging) {
-  /* background-color: #f38ba8; */
+  background-color: #f38ba8;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -163,119 +160,3 @@ tooltip {
   margin-left: 9px;
   padding-left: 3px;
 }
-/**/
-/**/
-/* #cpu { */
-/* 	border-radius: 21px 21px 21px 21px; */
-/* 	border-right: 0px;  */
-/* 	margin-right: 10px; */
-/* 	padding-right: 10px; */
-/* 	padding-left: 10px; */
-/* } */
-/* #custom-gpu-usage { */
-/* 	border-radius: 0px 21px 21px 0px; */
-/* 	border-right: 0px;  */
-/* 	margin-right: 10px; */
-/* 	padding-right: 10px; */
-/* 	padding-left: 10px; */
-/* } */
-/**/
-/* #custom-gpu-ram { */
-/* 	border-radius: 15px 15px 15px 15px; */
-/* 	border-right: 0px;  */
-/*   margin-right: 10px; */
-/*   padding-right: 10px; */
-/*   padding-left: 10px; */
-/* } */
-/* #memory { */
-/* 	border-radius: 15px 15px 15px 15px; */
-/* 	border-right: 0px; */
-/*   margin-left: 0px; */
-/*   margin-right: 10px; */
-/*   padding-left: 10px; */
-/*   padding-right: 10px; */
-/* } */
-/**/
-/* #disk { */
-/* 	border-radius: 15px 15px 15px 15px; */
-/* 	margin-right: 10px; */
-/* 	border-right: 0px; */
-/*   padding-left: 10px; */
-/*   padding-right: 10px; */
-/* } */
-/**/
-/* #battery { */
-/* 	border-radius: 15px 15px 15px 15px; */
-/* 	margin-left: 0px; */
-/* 	margin-right: 10px; */
-/*   padding-left: 10px; */
-/*   padding-right: 10px; */
-/* } */
-/**/
-/* #custom-uptime { */
-/* 	border-radius: 15px 15px 15px 15px; */
-/* 	margin-left: 0px; */
-/* 	margin-right: 10px; */
-/*   padding-left: 15px; */
-/*   padding-right: 15px; */
-/* } */
-/**/
-/* #custom-spotify { */
-/*    border-radius: 15px 15px 15px 15px; */
-/*    margin-right: 10px; */
-/*    margin-left: 0; */
-/* } */
-/**/
-/* #custom-weather { */
-/* 	border-radius: 15px 15px 15px 15px; */
-/*   margin-right: 10px; */
-/* } */
-/**/
-/* #pulseaudio { */
-/* 	border-radius: 20px 20px 20px 20px; */
-/*   margin-right: 10px; */
-/*   padding-left: 10px; */
-/*   padding-right: 10px; */
-/* } */
-/**/
-/* #backlight { */
-/* 	border-radius: 15px 15px 15px 15px; */
-/*   margin-right: 10px; */
-/*   padding-left: 10px; */
-/*   padding-right: 10px; */
-/* } */
-/**/
-/* #network { */
-/*   border-radius: 15px 15px 15px 15px; */
-/*   margin-right: 10px; */
-/*   padding-left: 10px; */
-/*   padding-right: 10px; */
-/* } */
-/**/
-/* #network.disconnected,#network.disabled { */
-/* } */
-/**/
-/* #clock { */
-/*    margin-right: 10px; */
-/* } */
-/**/
-/* #tray { */
-/* 	border-radius: 15px 15px 15px 15px; */
-/* 	margin-right: 10px; */
-/* } */
-/**/
-/* #tray > .passive { */
-/*     -gtk-icon-effect: dim; */
-/* } */
-/**/
-/* #tray > .needs-attention { */
-/*     -gtk-icon-effect: highlight; */
-/* } */
-/**/
-/* #custom-power { */
-/*    border-radius: 15px 15px 15px 15px; */
-/*    margin-right: 5px; */
-/*    margin-left: 0; */
-/*    font-size: 14px; */
-/* } */
-/**/
