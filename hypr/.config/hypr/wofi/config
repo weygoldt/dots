@@ -5,12 +5,12 @@ show=drun
 prompt=Apps
 normal_window=true
 layer=top
-term=alacritty
+term=kitty
 columns=1
 
 ## Geometry
-width=600px
-height=400px
+width=500px
+height=300px
 location=0
 orientation=vertical
 halign=fill
