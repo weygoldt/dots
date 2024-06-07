@@ -45,3 +45,4 @@ eval "$(zoxide init --cmd cd zsh)"
 
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
+if [ -f "/home/weygoldt/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/weygoldt/.config/fabric/fabric-bootstrap.inc"; fi

@@ -42,9 +42,8 @@ alias vim='nvim'
 alias code='code --password-store=kwallet5 --enable-features=UseOzonePlatform --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto'
 
 # Shell helpers
-alias ls='exa --icons --group-directories-first' # list files
+alias ls='exa -alh --group-directories-first' # list files with all info
 alias lss='exa -ah --icons --group-directories-first' # list all files
-alias lsa='exa -alh --group-directories-first' # list files with all info
 alias lst='exa --tree --icons' # list a directory tree
 alias lsp='exa --tree --icons --ignore-glob="*.pyc|__pycache__"' # list a directory tree without pyc files
 alias cl='clear'
