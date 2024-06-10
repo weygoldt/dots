@@ -43,6 +43,7 @@ alias code='code --password-store=kwallet5 --enable-features=UseOzonePlatform --
 
 # Shell helpers
 alias ls='exa -alh --group-directories-first' # list files with all info
+alias sl='exa -alh --group-directories-first' # list files with all info
 alias lss='exa -ah --icons --group-directories-first' # list all files
 alias lst='exa --tree --icons' # list a directory tree
 alias lsp='exa --tree --icons --ignore-glob="*.pyc|__pycache__"' # list a directory tree without pyc files
