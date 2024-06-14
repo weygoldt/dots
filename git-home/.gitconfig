@@ -17,6 +17,13 @@
 [core]
 	editor = nvim
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	compression = 0
+	packedGitLimit = 512m 
+	packedGitWindowSize = 512m 
+[pack] 
+	deltaCacheSize = 2047m 
+	packSizeLimit = 2047m 
+	windowMemory = 2047m
 [credential]
 	helper = cache --timeout=3600
 [gpg]
