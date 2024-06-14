@@ -1,8 +1,8 @@
  #!/bin/sh
 
 # Define source and destination directories
-local_dir="/home/weygoldt/Projects/chirpdetection_paper/"
-remote_dir="weygoldt@polarbear.am28.uni-tuebingen.de:Projects/chirpdetection_paper/"
+local_dir="/home/weygoldt/wrk/"
+remote_dir="weygoldt@polarbear.am28.uni-tuebingen.de:wrk/"
 
 # Check if argument is provided
 if [ "$1" == "tolab" ]; then
