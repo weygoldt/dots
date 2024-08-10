@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 PACKS=(
+    swww # solution for your wayland wallpaper woes
     exa # for better ls
     git # for version control
     bat # for better cat
