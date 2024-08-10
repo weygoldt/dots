@@ -33,8 +33,9 @@ alias md2pdf='zsh $scriptspath/markdown_to_pdf.sh'
 # Most used paths
 alias uni='cd $unipath'
 
-# Faster python
+# Faster python and R
 alias py='python3'
+alias r="Rscript"
 
 # Open text editors
 alias v='nvim' # neovim
