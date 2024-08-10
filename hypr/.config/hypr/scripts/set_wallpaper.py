@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
-import os 
+import os
 import argparse
 import random
 
-def main():
 
+def main():
     # set possible transitions types to fade images
-    transitions = ['simple']
-    smoothness = 5
+    transitions = ["simple", "top", "bottom", "left", "right"]
+    smoothness = 1
     fps = 60
 
     # get path to wallpapers directory from command line
@@ -20,7 +20,7 @@ def main():
     files = os.listdir(args.path)
 
     # get list of images
-    images = [f for f in files if f.endswith(('.png', '.jpg', '.jpeg'))]
+    images = [f for f in files if f.endswith((".png", ".jpg", ".jpeg"))]
 
     # pick a random image
     image = random.choice(images)
@@ -29,7 +29,10 @@ def main():
     transition = random.choice(transitions)
 
     # set the wallpaper
-    os.system(f'swww img "{args.path}/{image}" --transition-type "{transition}" --transition-step "{smoothness}" --transition-fps "{fps}"')
+    os.system(
+        f'swww img "{args.path}/{image}" --transition-type "{transition}" --transition-step "{smoothness}" --transition-fps "{fps}"'
+    )
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
