@@ -1,6 +1,6 @@
 {
   "backlight": {
-    "interval": 2,
+    "interval": 5,
     "align": 0,
     "rotate": 0,
       "format": "{icon} {percent}",
@@ -42,9 +42,9 @@
   },
 
   "battery": {
-	"interval": 60,
-	"align": 0,
-	"rotate": 0,
+	"interval": 10,
+	//"align": 0,
+	//"rotate": 0,
 	//"bat": "BAT1",
 	//"adapter": "ACAD",
 	"full-at": 100,
@@ -63,7 +63,7 @@
     "format-icons": [" ", " ", " ", " ", " "],
     "format-time": "{H}h {M}min",
     "tooltip": true,
-    "on-click-right": "~/.config/hypr/scripts/glassmorphismToggle"
+    //"on-click-right": "~/.config/hypr/scripts/glassmorphismToggle"
   },
 
   "clock": {
@@ -97,28 +97,28 @@
   },
 
   "custom/disk-root": {
-    "interval": 1,
+    "interval": 10,
     "exec": "df -h | awk '$NF==\"/\"{printf \"%d\", $5}'",
     "format": "ROOT {}%",
     "return type": "",
   },
 
   "custom/disk-home": {
-    "interval": 1,
+    "interval": 10,
     "exec": "df -h | awk '$NF==\"/home\"{printf \"%d\", $5}'",
     "format": "HOME {}%",
     "return type": "",
   },
 
   "memory": {
-    "interval": 10,
+    "interval": 1,
     //"format": " {percentage}",
     "exec": "free -m | awk 'NR==2{printf \"%2d\", $3*100/$2}'",
     "format": "RAM {}%",
   },
 
   "network": {
-    "interval": 5,
+    "interval": 10,
     "format-wifi": " ",
     "format-ethernet": "󰈀 {ipaddr}/{cidr}",
     "format-ethernet": "󰈀 ", 
@@ -181,4 +181,12 @@
     "return-type": "",
     "interval": 1
   },
+
+ "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": "TEMP {temperatureC}°C",
+    "format": "TEMP {temperatureC}°C"
+}
 }

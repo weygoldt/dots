@@ -13,9 +13,9 @@
   "margin-left": 0,
   "margin-right": 0,
 
-  "modules-left": ["hyprland/workspaces", "cpu", "memory", "custom/gpu-usage", "custom/gpu-ram", "custom/disk-root", "custom/disk-home"],
+  "modules-left": ["hyprland/workspaces", "cpu", "temperature", "memory", "custom/gpu-usage", "custom/gpu-ram"],
   "modules-center": ["custom/padd", "custom/spotify", "custom/padd"],
-  "modules-right": ["battery", "network", "pulseaudio", "backlight", "clock"],
+  "modules-right": [ "custom/disk-root", "custom/disk-home", "battery", "network", "pulseaudio", "backlight", "clock"],
 
     // modules for padding //
 
