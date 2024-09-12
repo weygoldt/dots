@@ -1,5 +1,4 @@
 {
-
   "backlight": {
     "interval": 2,
     "align": 0,
@@ -50,10 +49,10 @@
 	//"adapter": "ACAD",
 	"full-at": 100,
 	"design-capacity": false,
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 15
+      "states": {
+	"good": 95,
+	"warning": 30,
+	"critical": 15
     },
     "format": "{icon} {capacity}",
     "format-charging": " {capacity}",
@@ -66,15 +65,6 @@
     "tooltip": true,
     "on-click-right": "~/.config/hypr/scripts/glassmorphismToggle"
   },
-
-  // "clock": {
-  //   "interval": 60,
-  //   "align": 0,
-  //   "rotate": 0,
-  //   "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-  //   "format-alt": " {:%H:%M}",
-  //   "format": "{:%a %b %d, %G, %H:%M}",
-  // },
 
   "clock": {
       "format": "{:%I:%M %p}",
@@ -102,35 +92,35 @@
   },
 
   "cpu": {
-    //"format": " {usage}",
     "format": "CPU {usage}%",
     "interval": 1,
-    //"format": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% ",
-    //"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
 
-  "custom/menu": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "$HOME/.config/hypr/scripts/menu",
+  "custom/disk-root": {
+    "interval": 1,
+    "exec": "df -h | awk '$NF==\"/\"{printf \"%d\", $5}'",
+    "format": "ROOT {}%",
+    "return type": "",
   },
 
-  "disk": {
-    "interval": 30,
-    //"format": " {percentage_used}",
-    "format": "DISK {percentage_used}%",
+  "custom/disk-home": {
+    "interval": 1,
+    "exec": "df -h | awk '$NF==\"/home\"{printf \"%d\", $5}'",
+    "format": "HOME {}%",
+    "return type": "",
   },
 
   "memory": {
     "interval": 10,
     //"format": " {percentage}",
-    "format": "RAM {percentage}%",
+    "exec": "free -m | awk 'NR==2{printf \"%2d\", $3*100/$2}'",
+    "format": "RAM {}%",
   },
 
   "network": {
     "interval": 5,
     "format-wifi": " ",
-    // "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+    "format-ethernet": "󰈀 {ipaddr}/{cidr}",
     "format-ethernet": "󰈀 ", 
     "format-linked": "󰈀 {ifname} (No IP)",
     "format-disconnected": "󰤭 Disconnected",
@@ -140,17 +130,8 @@
     "on-click-right": "nmtui"
   },
 
-  "custom/updater":{
-    "format": " {}",
-    "exec": "checkupdates-with-aur | wc -l",
-    "exec-if": "[[ $(checkupdates-with-aur | wc -l) ]]",
-    "interval": 60,
-    // "on-click": "kitty --class update -T update -o font_size=13 -e paru -Syu && notify-send 'The system has been updated' " //
-  },
-
   "pulseaudio": {
-    // "format": "{icon} {volume} {format_source}",
-    "format": "{icon} {volume}",
+    "format": "{icon} {volume} {format_source}",
     "format-muted": " Mute",
     "format-bluetooth": " {volume}% {format_source}",
     "format-bluetooth-muted": " Mute",
@@ -188,17 +169,14 @@
   },
 
   "custom/gpu-usage": {
-    //"exec": "nvidia-smi --query-gpu=utilization.memory --format=csv,noheader,nounits | awk '{printf \"%02d\", $1}'",
-    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | awk '{printf \"%02d\", $1}'",
-    //"format": " {}",
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | awk '{printf \"%2d\", $1}'",
     "format": "GPU {}%",
     "return-type": "",
     "interval": 1
   },
 
   "custom/gpu-ram": {
-    "exec": "nvidia-smi --query-gpu=utilization.memory --format=csv,noheader,nounits | awk '{printf \"%02d\", $1}'", 
-    //"format": " {}",
+    "exec": "nvidia-smi --query-gpu=utilization.memory --format=csv,noheader,nounits | awk '{printf \"%2d\", $1}'", 
     "format": "VRAM {}%",
     "return-type": "",
     "interval": 1

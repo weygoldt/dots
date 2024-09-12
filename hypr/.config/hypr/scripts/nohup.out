@@ -495,3 +495,131 @@ thread 'main' panicked at daemon/src/main.rs:191:30:
 Io error when reading wayland events: Broken pipe (os error 32)
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 13:17:24 [0m[34m[INFO] [0m(main) Removed socket at "/run/user/1000/swww-wayland-1.socket"
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/site-packages/gi/_ossighelper.py", line 92, in signal_notify
+    def signal_notify(source, condition):
+
+  File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 74, in signal_handler
+    sys.stdout.flush()
+  File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 74, in signal_handler
+    sys.stdout.flush()
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stdout>'>
+Terminated
+Terminated
+Terminated
+[2024-09-12 21:11:58.032] [error] Error parsing JSON: * Line 184, Column 18
+  Missing ',' or '}' in object declaration
+
+[2024-09-12 21:12:09.380] [error] Error parsing JSON: * Line 184, Column 18
+  Missing ',' or '}' in object declaration
+
+[2024-09-12 21:12:17.371] [error] Error parsing JSON: * Line 184, Column 18
+  Missing ',' or '}' in object declaration
+
+[2024-09-12 21:12:26.476] [error] Error parsing JSON: * Line 184, Column 18
+  Missing ',' or '}' in object declaration
+
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Exception ignored in: <module 'threading' from '/usr/lib/python3.12/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1575, in _shutdown
+    def _shutdown():
+    
+  File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 76, in signal_handler
+    sys.exit(0)
+SystemExit: 0
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+                                                                                                                                                                                                                                  [2024-09-12 21:39:58.845] [error] Error parsing JSON: * Line 102, Column 5
+  Missing ',' or '}' in object declaration
+
+[2024-09-12 21:43:13.698] [error] Error parsing JSON: * Line 103, Column 5
+  Missing ',' or '}' in object declaration
+
+Terminated
+Terminated
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/site-packages/gi/_ossighelper.py", line 92, in signal_notify
+    def signal_notify(source, condition):
+
+  File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 74, in signal_handler
+    sys.stdout.flush()
+  File "/home/weygoldt/.config/hypr/scripts/mediaplayer.py", line 74, in signal_handler
+    sys.stdout.flush()
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stdout>'>
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+[2024-09-12 21:59:25.142] [error] cpu: argument not found
+[2024-09-12 21:59:25.996] [error] cpu: argument not found
+[2024-09-12 21:59:26.997] [error] cpu: argument not found
+[2024-09-12 21:59:27.997] [error] cpu: argument not found
+[2024-09-12 21:59:28.997] [error] cpu: argument not found
+[2024-09-12 21:59:29.998] [error] cpu: argument not found
+[2024-09-12 21:59:30.998] [error] cpu: argument not found
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+Terminated
+[2024-09-12 22:11:01.621] [error] style.css:5:15unknown value for property
+Terminated
+Terminated
