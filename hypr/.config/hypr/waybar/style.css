@@ -4,11 +4,11 @@
   font-family: "JetBrainsMono Nerd Font";
   font-weight: bold;
   font-size: 10px;
-  min-height: 10px;
+  min-height: 0px;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0);
   /*background: #191724;*/
 }
 
@@ -69,7 +69,8 @@ tooltip {
 #window,
 #network {
   /*color: #e0def4;*/
-  color: #e0def4;
+  /*color: #e0def4;*/
+  color: #908caa;
   opacity: 1;
   margin: 3px 0px 3px 0px;
   padding-left: 10px;
