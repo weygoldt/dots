@@ -40,7 +40,12 @@ alias r="Rscript"
 # Open text editors
 alias v='nvim' # neovim
 alias vim='nvim'
+alias vi='nvim'
 alias code='code --password-store=kwallet5 --enable-features=UseOzonePlatform --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto'
+
+# PDF viewer
+alias z='zathura'
+alias o='okular'
 
 # Shell helpers
 alias ls='exa -alh --group-directories-first' # list files with all info
