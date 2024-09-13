@@ -96,6 +96,11 @@
     "interval": 1,
   },
 
+  "custom/clock": {
+	"exec": "date +'%a %d %b %H:%M'",
+	"interval": 10,
+      },
+
   "custom/disk-root": {
     "interval": 10,
     "exec": "df -h | awk '$NF==\"/\"{printf \"%d\", $5}'",
