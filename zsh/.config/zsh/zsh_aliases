@@ -82,9 +82,17 @@ alias dismountphone='sudo umount $phonepath'
 # Temporary aliases
 alias lsync='~/.scripts/synclab.sh'
 
-# Hyprland toggle mirror
+#### Good for teaching ----------------------------------------------------------
+
+# Mirror and unmirror output (good for teaching and presentations)
 alias mirror='hyprctl keyword monitor ,preferred,auto,1,mirror,eDP-1'
 alias unmirror='hyprctl keyword monitor ,preferred,auto,1'
+
+# Terminal colors, good when beamers are involved
+alias termlight="kitty @ set-colors --all --configured ~/.config/kitty/themes/rose-pine-dawn.conf"
+alias termdark="kitty @ set-colors --all --configured ~/.config/kitty/themes/rose-pine.conf"
+
+#### ---------------------------------------------------------------------------
 
 # remote hacking on wayland machines
 wssh () {
