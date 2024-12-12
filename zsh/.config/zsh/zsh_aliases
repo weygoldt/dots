@@ -89,7 +89,7 @@ alias mirror='hyprctl keyword monitor ,preferred,auto,1,mirror,eDP-1'
 alias unmirror='hyprctl keyword monitor ,preferred,auto,1'
 
 # Terminal colors, good when beamers are involved
-alias termlight="kitty @ set-colors --all --configured ~/.config/kitty/themes/rose-pine-dawn.conf"
+alias termlight="kitty @ set-colors --all --configured ~/.config/kitty/themes/catppuccin-latte.conf"
 alias termdark="kitty @ set-colors --all --configured ~/.config/kitty/themes/rose-pine.conf"
 
 #### ---------------------------------------------------------------------------
