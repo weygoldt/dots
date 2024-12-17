@@ -32,6 +32,11 @@ PACKS=(
     cmatrix-git # for fun
     pyenv # for python version management
     pyenv-virtualenv # for python virtualenv management
+    base-devel # needed for pyenv
+    openssl
+    zlib
+    xz
+    tk
 )
 
 echo "Installing system utilities"

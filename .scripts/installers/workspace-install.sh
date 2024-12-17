@@ -18,7 +18,7 @@ PACKS=(
     texlive # for latex
     biber # for biblatex
     pandoc # for document conversion
-    firefox # for browsing
+    zen-browser # for browsing
     inkscape # for vector graphics
     gimp # for raster graphics
     darktable # for photo editing

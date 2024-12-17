@@ -40,12 +40,12 @@ bindkey '^ ' autosuggest-accept # bind strg+space to accept
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(starship init zsh)"
-eval "$(direnv hook zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
 if [ -f "/home/weygoldt/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/weygoldt/.config/fabric/fabric-bootstrap.inc"; fi
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/weygoldt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

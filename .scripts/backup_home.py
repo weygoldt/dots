@@ -19,7 +19,7 @@ SUBDIRS = [
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--input", 
+        "--input",
         "-i",
         help="Input directory",
         type=pathlib.Path,
@@ -49,7 +49,7 @@ def main():
     for dir in SUBDIRS:
         ip = f"{input_dir / dir}{os.sep}"
         op = f"{output_dir / dir}{os.sep}"
-        
+
         print(f"Backing up {ip} to {op}...")
 
         if not pathlib.Path(ip).exists():
