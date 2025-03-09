@@ -30,12 +30,13 @@ alias videodl='youtube-dl -f best'
 # Latex, markdown, pandoc
 alias md2pdf='zsh $scriptspath/markdown_to_pdf.sh'
 
-# Most used paths
-alias uni='cd $unipath'
-
 # Faster python and R
 alias py='python3'
 alias r="Rscript"
+
+# vpn
+alias vpnup="nmcli con up vpn.uni-tuebingen.de"
+alias vpndown="nmcli con down vpn.uni-tuebingen.de"
 
 # Open text editors
 alias v='nvim' # neovim
