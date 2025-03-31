@@ -3,6 +3,13 @@
 # -------------------------------------------------------------------------
 # Continuously pull changes FROM the lab (remote) TO local machine (laptop)
 # -------------------------------------------------------------------------
+#
+# Start an ssh-agent if not already running
+# eval "$(ssh-agent -s)"
+#
+# # Add your key once, enter the passphrase
+# ssh-add ~/.ssh/id_ed25519
+
 
 # User/host and directory paths (same as in your original script):
 local_dir="/home/weygoldt/wrk/"
