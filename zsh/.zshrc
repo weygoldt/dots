@@ -28,7 +28,7 @@ export PAGER="most" # color manpages
 export SSH_AUTH_SOCK=~/.1password/agent.sock # For 1password to manage ssh keys
 # export PATH="$HOME/.pyenv/bin:$PATH" # For pyenv
 export VIRTUAL_ENV_DISABLE_PROMPT=tr # For starship prompt 
-export TERM="xterm-kitty" # For kitty terminal
+# export TERM="xterm-kitty" # For kitty terminal
 export RANGER_LOAD_DEFAULT_RC=false # For ranger
 
 # Keybindings
