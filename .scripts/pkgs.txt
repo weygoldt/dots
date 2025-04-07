@@ -17,6 +17,7 @@ capitaine-cursors
 cmatrix-git
 colloid-icon-theme-git
 cronie
+csvlens
 cuda
 cuda-tools
 cudnn
@@ -117,6 +118,7 @@ quarto-cli-bin
 r
 ripgrep
 rsync
+rustup
 slurp
 smartmontools
 sox
@@ -161,6 +163,7 @@ ttf-font-awesome
 ttf-jetbrains-mono-nerd
 ttf-xkcd-script-font
 ufw
+uwsm
 vim
 visual-studio-code-bin
 vlc
