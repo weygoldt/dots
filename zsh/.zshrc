@@ -26,9 +26,9 @@ export VISUAL='/usr/bin/nvim' # Visual editor
 export PATH="$HOME/.local/bin:$PATH" # For user binaries
 export PAGER="most" # color manpages
 export SSH_AUTH_SOCK=~/.1password/agent.sock # For 1password to manage ssh keys
-export PATH="$HOME/.pyenv/bin:$PATH" # For pyenv
+# export PATH="$HOME/.pyenv/bin:$PATH" # For pyenv
 export VIRTUAL_ENV_DISABLE_PROMPT=tr # For starship prompt 
-export TERM="xterm-kitty" # For kitty terminal
+# export TERM="xterm-kitty" # For kitty terminal
 export RANGER_LOAD_DEFAULT_RC=false # For ranger
 
 # Keybindings
@@ -43,7 +43,9 @@ eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 fpath+=~/.zfunc
+
 autoload -Uz compinit && compinit
+
 if [ -f "/home/weygoldt/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/weygoldt/.config/fabric/fabric-bootstrap.inc"; fi
 
 # >>> conda initialize >>>
@@ -61,3 +63,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
