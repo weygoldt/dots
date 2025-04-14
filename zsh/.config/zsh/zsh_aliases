@@ -44,6 +44,10 @@ alias vim='nvim'
 alias vi='nvim'
 alias code='code --password-store=kwallet5 --enable-features=UseOzonePlatform --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto'
 
+# Nice terminal utilities
+alias csv = 'csvlens'
+alias json = 'jless'
+
 # PDF viewer
 alias z='zathura'
 alias o='okular'
