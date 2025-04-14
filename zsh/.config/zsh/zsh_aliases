@@ -32,7 +32,6 @@ alias md2pdf='zsh $scriptspath/markdown_to_pdf.sh'
 
 # Faster python and R
 alias py='python3'
-alias r="Rscript"
 
 # vpn
 alias vpnup="nmcli con up vpn.uni-tuebingen.de"
@@ -45,8 +44,8 @@ alias vi='nvim'
 alias code='code --password-store=kwallet5 --enable-features=UseOzonePlatform --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto'
 
 # Nice terminal utilities
-alias csv = 'csvlens'
-alias json = 'jless'
+alias csv='csvlens'
+alias json='jless'
 
 # PDF viewer
 alias z='zathura'
