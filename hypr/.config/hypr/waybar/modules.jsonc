@@ -124,9 +124,9 @@
 
   "network": {
     "interval": 10,
-    "format-wifi": " ",
-    "format-ethernet": "󰈀 {ipaddr}/{cidr}",
-    //"format-ethernet": "󰈀 ", 
+    "format-wifi": "  ",
+    // "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+    "format-ethernet": "󰈀 Ether",
     "format-linked": "󰈀 {ifname} (No IP)",
     "format-disconnected": "󰤭 Disconnected",
     "format-disabled": "󰤭 Disabled",
