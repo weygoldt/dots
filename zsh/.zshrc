@@ -37,10 +37,8 @@ bindkey ^R history-incremental-search-backward
 bindkey ^S history-incremental-search-forward
 bindkey '^ ' autosuggest-accept # bind strg+space to accept
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(starship init zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 fpath+=~/.zfunc
 
@@ -63,5 +61,8 @@ autoload -Uz compinit && compinit
 # unset __conda_setup
 # # <<< conda initialize <<<
 
-# eval "$(uv generate-shell-completion zsh)"
-# eval "$(uvx --generate-shell-completion zsh)"
+eval "$(starship init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+eval "$(direnv hook zsh)"

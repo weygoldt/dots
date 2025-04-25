@@ -1,4 +1,4 @@
-# Description: A simple Makefile to manage the dotfiles
+# A simple Makefile to manage the dotfiles
 
 # Define the hostnames for the work and home machines
 WORK_HOSTNAME := polarbear
