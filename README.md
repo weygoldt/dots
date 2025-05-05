@@ -75,3 +75,9 @@ well as document the packages I need on a system to make the migration to new
 systems faster. In addition, I document how I [install](system/install-arch),
 [maintain](system/maintain-arch) and [backup](system/backup-arch) my
 workstation.
+
+## TODO
+
+- [ ] Fix the formatting of wlogout
+- [ ] Fix the formatting of the swaync control panel
+- [ ] Create a standardized position for the current wallpaper
