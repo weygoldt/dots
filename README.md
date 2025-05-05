@@ -78,6 +78,9 @@ workstation.
 
 ## TODO
 
-- [ ] Fix the formatting of wlogout
 - [ ] Fix the formatting of the swaync control panel
 - [ ] Create a standardized position for the current wallpaper
+- [ ] Fix the brightness control notification icon, still points to old mako dir
+
+- [x] Fix the formatting of wlogout
+
