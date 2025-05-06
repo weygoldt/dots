@@ -9,7 +9,8 @@ def main():
     # set possible transitions types to fade images
     transitions = ["simple", "top", "bottom", "left", "right"]
     smoothness = 1
-    fps = 60
+    duration = 0.1
+    fps = 500
 
     # get path to wallpapers directory from command line
     parser = argparse.ArgumentParser()
@@ -30,7 +31,7 @@ def main():
 
     # set the wallpaper
     os.system(
-        f'swww img "{args.path}/{image}" --transition-type "{transition}" --transition-step "{smoothness}" --transition-fps "{fps}"'
+        f'swww img "{args.path}/{image}" --transition-type "{transition}" --transition-step "{smoothness}" --transition-fps "{fps}" --transition-duration "{duration}"'
     )
 
 
