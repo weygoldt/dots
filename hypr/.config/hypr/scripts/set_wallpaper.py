@@ -7,10 +7,10 @@ import random
 
 def main():
     # set possible transitions types to fade images
-    transitions = ["simple", "top", "bottom", "left", "right"]
-    smoothness = 1
-    duration = 0.1
-    fps = 500
+    transitions = ["wipe", "top", "bottom", "left", "right"]
+    smoothness = 100
+    duration = 1
+    fps = 60
 
     # get path to wallpapers directory from command line
     parser = argparse.ArgumentParser()
@@ -28,6 +28,8 @@ def main():
 
     # pick a random transition
     transition = random.choice(transitions)
+
+    print(f"Setting wallpaper to {image} with transition {transition}")
 
     # set the wallpaper
     os.system(
