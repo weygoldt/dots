@@ -1,17 +1,17 @@
 * {
   border: none;
   /*border-radius: 10px;*/
-  /* font-family: "JetBrainsMono Nerd Font"; */
-  font-family: "IBM Plex Mono";
+  font-family: "JetBrainsMono Nerd Font";
+  /* font-family: "IBM Plex Mono"; */
   /* font-family: ""; */
   font-weight: normal;
-  font-size: 10px;
+  font-size: 12px;
   min-height: 0px;
 }
 
 window#waybar {
   background: rgba(0, 0, 0, 1);
-  /*background: #191724;*/
+  /* background: #191724; */
 }
 
 tooltip {
