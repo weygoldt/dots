@@ -14,57 +14,48 @@
   "margin-right": 0,
 
   "modules-left": ["hyprland/workspaces", "cpu", "temperature", "memory", "custom/gpu-usage", "custom/gpu-ram"],
-  "modules-center": ["custom/padd", "custom/spotify", "custom/padd"],
-  "modules-right": [ "custom/disk-root", "custom/disk-home", "battery", "network", "pulseaudio", "backlight", "custom/notification", "custom/clock"],
+  "modules-center": ["custom/padd", "hyprland/window", "custom/spotify", "custom/padd"],
+  "modules-right": [ "custom/disk-root", "custom/disk-home", "battery", "network", "pulseaudio", "backlight", "custom/notification", "tray", "custom/clock"],
 
     // modules for padding //
-
     "custom/bar": {
         "format": "|",
         "interval": "once",
         "tooltip": false
     },
-
     "custom/l_end": {
         "format": " ",
         "interval" : "once",
         "tooltip": false
     },
-
     "custom/r_end": {
         "format": " ",
         "interval" : "once",
         "tooltip": false
     },
-
     "custom/sl_end": {
         "format": " ",
         "interval" : "once",
         "tooltip": false
     },
-
     "custom/sr_end": {
         "format": " ",
         "interval" : "once",
         "tooltip": false
     },
-
     "custom/rl_end": {
         "format": " ",
         "interval" : "once",
         "tooltip": false
     },
-
     "custom/rr_end": {
         "format": " ",
         "interval" : "once",
         "tooltip": false
     },
-
     "custom/padd": {
         "format": " ",
         "interval" : "once",
         "tooltip": false
     }
-
 }

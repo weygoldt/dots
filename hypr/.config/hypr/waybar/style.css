@@ -1,17 +1,12 @@
 * {
   border: none;
-  /*border-radius: 10px;*/
   font-family: "JetBrainsMono Nerd Font";
-  /* font-family: "IBM Plex Mono"; */
-  /* font-family: ""; */
   font-weight: normal;
   font-size: 12px;
-  min-height: 0px;
 }
 
 window#waybar {
   background: rgba(0, 0, 0, 1);
-  /* background: #191724; */
 }
 
 tooltip {
@@ -73,25 +68,14 @@ tooltip {
 #window,
 #temperature,
 #network {
-  /*color: #e0def4;*/
   color: #e0def4;
-  /* color: #908caa; */
+  /* background: rgba(0, 0, 0, 1); */
   opacity: 1;
   margin: 3px 0px 3px 0px;
   padding-left: 10px;
   padding-right: 10px;
   margin-right: 0px;
   margin-top: 4px;
-}
-
-#cpu,
-#disk,
-#memory,
-#battery,
-#custom-gpu-ram,
-#custom-gpu-usage {
-   /*color: #9ccfd8; */
-   /*background: rgba(0, 0, 0, 0); */
 }
 
 #custom-l_end,
@@ -101,7 +85,7 @@ tooltip {
 #custom-rl_end,
 #custom-rr_end {
   color: #ffffff;
-  /* background: #000000; */
+  background: #000000;
   opacity: 1;
   margin: 2px 0px 2px 0px;
   padding-left: 0px;

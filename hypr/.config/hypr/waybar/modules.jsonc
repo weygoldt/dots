@@ -40,17 +40,17 @@
   //   "on-scroll-up": "hyprctl dispatch workspace e+1",
   //   "on-scroll-down": "hyprctl dispatch workspace e-1",
   // },
+
   "hyprland/workspaces": {
-	  "disable-scroll": true,
-	  "all-outputs": false,
-	  "on-click": "activate",
-	  "format": "{name}",
-	  "persistent-workspaces":
-	  {
-	      "DP-3":[1,2,3,4,5],
-	      "DP-1":[6,7,8,9,10],
-	  }
-	      
+   "disable-scroll": true,
+   "all-outputs": false,
+   "on-click": "activate",
+   "format": "{name}",
+   "persistent-workspaces":
+   {
+       "DP-3":[1,2,3,4,5],
+       "DP-1":[6,7,8,9,10],
+   }
   },
 
   "battery": {
@@ -111,7 +111,7 @@
   "custom/clock": {
 	"exec": "date +'%a %d %b %H:%M'",
 	"interval": 10,
-      },
+   },
 
   "custom/disk-root": {
     "interval": 10,
@@ -209,15 +209,15 @@
 
   "custom/notification": {
     "tooltip": false,
-    "format": "{icon}",
+    "format": " {icon}",
     "format-icons": {
-      "notification": " <span foreground='red'><sup></sup></span>",
+      "notification": " <span foreground='white'><sup></sup></span>",
       "none": " ",
-      "dnd-notification": " <span foreground='red'><sup></sup></span>",
+      "dnd-notification": " <span foreground='white'><sup></sup></span>",
       "dnd-none": " ",
-      "inhibited-notification": " <span foreground='red'><sup></sup></span>",
+      "inhibited-notification": " <span foreground='white'><sup></sup></span>",
       "inhibited-none": " ",
-      "dnd-inhibited-notification": " <span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-notification": " <span foreground='white'><sup></sup></span>",
       "dnd-inhibited-none": " "
     },
     "return-type": "json",
