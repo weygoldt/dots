@@ -23,6 +23,9 @@ gt () {
     git add . && git commit -m "$1" && git pull && git push
 }
 
+# Dotfile sync tool for other user accounts
+alias dotsync="sudo rsync -a --progress --delete /home/weygoldt/.dotfiles/ ~/.dotfiles/ && sudo chown -R $USER:$USER ~/.dotfiles/ && cd ~/.dotfiles/ && make"
+
 # Download helpers
 alias audiodl='youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 5'
 alias videodl='youtube-dl -f best'
