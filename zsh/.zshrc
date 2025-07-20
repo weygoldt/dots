@@ -66,3 +66,4 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 eval "$(direnv hook zsh)"
+export PATH=~/.npm-global/bin:$PATH
