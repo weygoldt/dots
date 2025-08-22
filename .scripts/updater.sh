@@ -25,9 +25,6 @@ sudo systemctl start reflector.service
 echo $'\e[1;32mUpdating system ...\e[0m'
 paru -Syu
 
-echo $'\e[1;32mConda\e[0m'
-conda update -n base -c defaults conda
-
 echo $'\e[1;32mDeleting uninstalled packages from cache ...\e[0m'
 sudo pacman -Sc
 paru -Sc
