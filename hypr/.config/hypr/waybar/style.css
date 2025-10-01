@@ -6,7 +6,8 @@
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0.5);
+  /* background: #191724; */
 }
 
 tooltip {
@@ -18,18 +19,18 @@ tooltip {
 
 #workspaces button {
   padding: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
   /*color: #585b70;*/
-  color: #908caa;
+  /* color: #908caa; */
+  color: rgba(0, 0, 0, 0.6);
 }
 
 #workspaces button.active {
   padding: 0px;
   padding-left: 5px;
   padding-right: 5px;
-  /* color: #ebbcba; */
-  color: #ffffff;
+  color: #191724;
   border-radius: 10px;
 }
 
@@ -38,7 +39,8 @@ tooltip {
   border-radius: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  color: #e0def4;
+  /* color: #e0def4; */
+  color: #191724;
 }
 
 #workspaces button.urgent {
@@ -68,14 +70,54 @@ tooltip {
 #window,
 #temperature,
 #network {
-  color: #e0def4;
-  /* background: rgba(0, 0, 0, 1); */
+  /* color: #e0def4; */
+  color: #000000;
+  background: rgba(25, 25, 125, 1);
   opacity: 1;
-  margin: 3px 0px 3px 0px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 0px;
-  margin-top: 4px;
+  /* margin: 3px 0px 3px 0px; */
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 6px;
+  margin-bottom: 2px;
+  border-radius: 2px;
+}
+
+#workspaces {
+  /* background: rgba(235, 188, 186, 1); */
+  background: #f6c177;
+}
+
+#cpu,
+#memory,
+#custom-gpu-ram,
+#custom-gpu-usage {
+  background: rgba(235, 188, 186, 1);
+  /* background: #9ccfd8; */
+}
+
+#custom-spotify,
+#window {
+  background: #c4a7e7;
+}
+
+#custom-disk-root,
+#custom-disk-home {
+  background: #8caaee;
+}
+
+#clock,
+#tray,
+#pulseaudio,
+/* #custom-clock, */
+#network {
+  /* background: #908caa; */
+  background: #9ccfd8;
+}
+
+#custom-clock {
+  background: #a6d189;
 }
 
 #custom-l_end,
