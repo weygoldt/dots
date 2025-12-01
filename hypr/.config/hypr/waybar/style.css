@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 1);
   /* background: #191724; */
 }
 
@@ -62,6 +62,7 @@ tooltip {
 #custom-weather,
 #custom-updater,
 #custom-keybindings,
+#custom-notification,
 #custom-cycle_wall,
 #custom-spotify,
 #workspaces,
@@ -91,6 +92,7 @@ tooltip {
 
 #cpu,
 #memory,
+#temperature,
 #custom-gpu-ram,
 #custom-gpu-usage {
   background: rgba(235, 188, 186, 1);
@@ -102,6 +104,7 @@ tooltip {
   background: #c4a7e7;
 }
 
+#battery,
 #custom-disk-root,
 #custom-disk-home {
   background: #8caaee;
@@ -111,7 +114,9 @@ tooltip {
 #tray,
 #pulseaudio,
 /* #custom-clock, */
-#network {
+#network,
+#custom-notification,
+#backlight {
   /* background: #908caa; */
   background: #9ccfd8;
 }
