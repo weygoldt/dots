@@ -195,6 +195,56 @@ gestures {
   # workspace_swipe_fingers = 3
 }
 
+# windowrule = animation popin, class:^(org.kde.polkit-kde-authentication-agent-1)$
+# windowrule = float, class:^(org.kde.polkit-kde-authentication-agent-1)$
+# windowrule = size 30% 20%, class:^(org.kde.polkit-kde-authentication-agent-1)$
+# windowrule = center, class:^(org.kde.polkit-kde-authentication-agent-1)$
+# windowrule = animation popin, class:^(1Password)$
+# windowrule = float, class:^(1Password)$
+# windowrulev2 = size 40% 80%, class:^(1Password)$
+# windowrulev2 = center, class:^(1Password)$
+
+# windowrule = opacity $window_opacity $window_opacity ,class:^(wofi)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(kitty)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(firefox)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(Spotify)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(Code)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(code-url-handler)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(org.kde.dolphin)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(org.kde.ark)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(nwg-look)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(qt5ct)$
+# windowrule = opacity $window_opacity $window_opacity, class:^(org.pwmt.zathura)$
+# windowrule = opacity $window_opacity $window_opacity, class:^(zen)$
+
+# windowrule = opacity $window_opacity $window_opacity ,class:^(com.obsproject.Studio)$ #Obs-Qt
+# windowrule = opacity $window_opacity $window_opacity ,class:^(Signal)$ #Signal-Gtk
+# windowrule = opacity $window_opacity $window_opacity ,class:^(pavucontrol)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(blueman-manager)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(nm-applet)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(nm-connection-editor)$
+# windowrule = opacity $window_opacity $window_opacity ,class:^(org.kde.polkit-kde-authentication-agent-1)$
+#
+# windowrule = float,class:^(qt5ct)$
+# windowrule = float,class:^(nwg-look)$
+# windowrule = float,class:^(org.kde.ark)$
+# windowrule = float,class:^(Signal)$ #Signal-Gtk
+# windowrule = float,class:^(com.github.rafostar.Clapper)$ #Clapper-Gtk
+# windowrule = float,class:^(app.drey.Warp)$ #Warp-Gtk
+# windowrule = float,class:^(net.davidotek.pupgui2)$ #ProtonUp-Qt
+# windowrule = float,class:^(yad)$ #Protontricks-Gtk
+# windowrule = float,class:^(eog)$ #Imageviewer-Gtk
+# windowrule = float,class:^(io.gitlab.theevilskeleton.Upscaler)$ #Upscaler-Gtk
+# windowrule = float,class:^(pavucontrol)$
+# windowrule = float,class:^(blueman-manager)$
+# windowrule = float,class:^(nm-applet)$
+# windowrule = float,class:^(nm-connection-editor)$
+# windowrule = float,class:^(org.kde.polkit-kde-authentication-agent-1)$
+#
+# # Fix Matplotlib Floating
+# windowrule = float,class:^(Matplotlib*)$
+# windowrule = float,title:^(Figure*)$
+# windowrule = float,class:^(python3*)$
 # windowrulev2 = animation popin, class:^(org.kde.polkit-kde-authentication-agent-1)$
 # windowrulev2 = float, class:^(org.kde.polkit-kde-authentication-agent-1)$
 # windowrulev2 = size 30% 20%, class:^(org.kde.polkit-kde-authentication-agent-1)$
