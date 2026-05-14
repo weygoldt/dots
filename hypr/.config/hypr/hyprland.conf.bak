@@ -401,7 +401,7 @@ bind = , xf86monbrightnessdown, exec, $backlight --dec
 bind = $mainMod SHIFT, B, exec, light -s sysfs/leds/tpacpi::kbd_backlight -S 100
 bind = $mainMod CTRL SHIFT, B, exec, light -s sysfs/leds/tpacpi::kbd_backlight -S 0
 
-bind = $mainMod, Y, togglesplit
+# bind = $mainMod, Y, togglesplit
 
 # Open apps
 bind = $mainMod, Return, exec, $term
