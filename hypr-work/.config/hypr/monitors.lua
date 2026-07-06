@@ -1,4 +1,4 @@
-hl.monitor({ output = "DP-1",     mode = "preferred", position = "auto", scale = 1.5   })
+hl.monitor({ output = "DP-1", mode = "preferred", position = "auto", scale = 1.5 })
 hl.monitor({ output = "HDMI-A-2", mode = "preferred", position = "auto", scale = 0.833 })
 -- hl.monitor({ output = "DP-1", mode = "preferred", position = "auto", scale = 1, transform = 1 })
 
