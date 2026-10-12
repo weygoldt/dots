@@ -27,9 +27,11 @@ hl.window_rule({
 hl.window_rule({
 	name = "sway-launcher",
 	match = { class = "Launcher" },
+	animation = "popin",
 	float = true,
-	size = { "monitor_w*0.2", "monitor_h*0.2" },
+	size = { "monitor_w*0.3", "monitor_h*0.4" },
 	center = true,
+	opacity = OP .. " " .. OP,
 })
 
 ----------------------------------------------------------------------
