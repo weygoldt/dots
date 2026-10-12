@@ -1,26 +1,14 @@
 #!/usr/bin/env bash
+# Toggle between the dwindle and master layouts.
+# Hyprland's Lua config rejects `hyprctl keyword`, so options are set via eval.
+# Focus binds (SUPER+hjkl) are directional and work in both layouts.
 
-LAYOUT=$(hyprctl -j getoption general:layout | jq '.str' | sed 's/"//g')
+LAYOUT=$(hyprctl -j getoption general:layout | jq -r '.str')
 
 case $LAYOUT in
-"master")
-	hyprctl keyword general:layout dwindle
-	hyprctl keyword unbind SUPER,J
-	hyprctl keyword unbind SUPER,K
-	hyprctl keyword bind SUPER,J,cyclenext
-	hyprctl keyword bind SUPER,K,cyclenext,prev
-	hyprctl keyword bind SUPER,O,togglesplit
-  notify-send "Master Layout"
-	;;
-"dwindle")
-	hyprctl keyword general:layout master
-	hyprctl keyword unbind SUPER,J
-	hyprctl keyword unbind SUPER,K
-	hyprctl keyword unbind SUPER,O
-	hyprctl keyword bind SUPER,J,layoutmsg,cyclenext
-	hyprctl keyword bind SUPER,K,layoutmsg,cycleprev
-  notify-send "Dwindle Layout"
-	;;
-*) ;;
+master) NEW=dwindle ;;
+*) NEW=master ;;
+esac
 
-  esac
+hyprctl eval "hl.config({ general = { layout = \"$NEW\" } })" >/dev/null &&
+	notify-send -t 1500 "Layout: $NEW"

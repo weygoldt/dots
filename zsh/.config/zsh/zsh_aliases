@@ -93,8 +93,8 @@ alias lsync='~/.scripts/synclab.sh'
 #### Good for teaching ----------------------------------------------------------
 
 # Mirror and unmirror output (good for teaching and presentations)
-alias mirror='hyprctl keyword monitor ,preferred,auto,1,mirror,eDP-1'
-alias unmirror='hyprctl keyword monitor ,preferred,auto,1'
+alias mirror='hyprctl eval "hl.monitor({ output = \"\", mode = \"preferred\", position = \"auto\", scale = 1, mirror = \"eDP-1\" })"'
+alias unmirror='hyprctl reload' # re-applies the per-host monitors.lua
 
 # Terminal colors, good when beamers are involved
 alias termlight="kitty @ set-colors --all --configured ~/.config/kitty/themes/catppuccin-latte.conf"
