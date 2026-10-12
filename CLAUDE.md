@@ -22,7 +22,7 @@ Submodule note: `nvim/.config/nvim` is a git submodule pointing at `weygoldt/nvi
 Some configs differ between machines. The convention is `<base>-home/` and `<base>-work/` packages alongside the generic `<base>/`:
 
 - Generic package (e.g. `hypr/`) holds shared config.
-- `hypr-home/`, `hypr-work/` hold only the files that differ (e.g. `monitors.conf`, `hyprpaper.conf`).
+- `hypr-home/`, `hypr-work/` hold only the files that differ (e.g. `monitors.lua`, `hyprpaper.conf`).
 
 The `Makefile` picks the right override set by matching `uname -n` against two hardcoded hostnames at the top of the file:
 
@@ -45,4 +45,7 @@ When adding new top-level directories, decide whether they should be a Stow pack
 
 - Files in `~/.config/...` on this system are symlinks into this repo. Editing either side edits the source; there is no separate "deploy" step after editing.
 - Adding a *new* file inside an existing package generally requires `make update` (or `make <package>`) so Stow creates the new symlink. Editing an existing tracked file does not.
-- The `hypr` package is the active example: `hyprland.conf` is the shared config and machine-specific monitor layout lives in `hypr-home/` or `hypr-work/`.
+- The `hypr` package is the active example: `hyprland.lua` (plus the modules it `require`s) is the shared config and machine-specific monitor layout lives in `hypr-home/monitors.lua` or `hypr-work/monitors.lua`.
+- Hyprland runs a **Lua config**: legacy `hyprctl keyword ...` and `hyprctl dispatch <name> <args>` fail. Use `hyprctl eval '<lua>'` and `hyprctl dispatch 'hl.dsp.focus({ workspace = "e+1" })'` in scripts, aliases and waybar.
+- The `hypr` package is shared with the work machine: per-host changes belong in `hypr-home`/`hypr-work`.
+- waybar icons are Nerd Font private-use glyphs that are easy to lose when rewriting files; verify them after edits.
