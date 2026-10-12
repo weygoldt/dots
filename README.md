@@ -74,6 +74,7 @@ Most of my dotfiles are simple configuration files of shells, terminals, etc.
 But there are also some [scripts](.scripts) that I use to automate some tasks
 (backups, syncing, updates) as well as document the packages I need on a system
 to make the migration to new systems faster. In addition, I document how I
+[install](.system/install-arch), [maintain](.system/maintain-arch) and
 [backup](.system/backup-arch) my workstation.
 
 ## TODO
