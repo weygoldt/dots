@@ -106,6 +106,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("nm-applet --indicator")
 	hl.exec_cmd(scriptsDir .. "/statusbar")
 	hl.exec_cmd("swaync")
+	hl.exec_cmd(scriptsDir .. "/battery-notify") -- no-op without a battery
 	hl.exec_cmd("kbuildsycoca6")
 	hl.exec_cmd("clipse -listen")
 	hl.exec_cmd("awww-daemon")

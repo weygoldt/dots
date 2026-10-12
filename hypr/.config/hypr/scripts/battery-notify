@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Notify once each time the laptop battery drops past a threshold while
+# discharging. Plugging in re-arms all thresholds. Exits quietly on machines
+# without a battery. BATTERY_DIR / INTERVAL can be overridden for testing.
+
+THRESHOLDS=(20 15 10 5) # descending
+INTERVAL=${INTERVAL:-60}
+BAT=${BATTERY_DIR:-$(find /sys/class/power_supply/ -maxdepth 1 -name 'BAT*' | sort | head -n1)}
+
+[[ -n $BAT && -r $BAT/capacity ]] || exit 0
+
+# Single instance per session
+exec 9>"${XDG_RUNTIME_DIR:-/tmp}/battery-notify.lock"
+flock -n 9 || exit 0
+
+notified=101 # lowest threshold already notified; 101 = none
+
+while true; do
+	capacity=$(<"$BAT/capacity")
+	status=$(<"$BAT/status")
+
+	if [[ $status != Discharging ]]; then
+		notified=101
+	else
+		# Lowest threshold we've reached but not yet announced
+		target=
+		for t in "${THRESHOLDS[@]}"; do
+			((capacity <= t && t < notified)) && target=$t
+		done
+
+		if [[ -n $target ]]; then
+			urgency=normal
+			((target <= 10)) && urgency=critical
+			notify-send -u "$urgency" -a "Battery" -i battery-caution \
+				-h string:x-canonical-private-synchronous:battery-low \
+				"Battery low: ${capacity}%" "Plug in the charger soon."
+			notified=$target
+		fi
+	fi
+
+	sleep "$INTERVAL"
+done
