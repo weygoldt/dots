@@ -1,195 +1,171 @@
+/* Rose Pine pastel pills on a black bar */
+
+@define-color base #191724;
+@define-color text #191724;
+@define-color gold #f6c177;
+@define-color rose #ebbcba;
+@define-color love #eb6f92;
+@define-color iris #c4a7e7;
+@define-color foam #9ccfd8;
+@define-color pine #8caaee;
+@define-color leaf #a6d189;
+
 * {
   border: none;
   font-family: "JetBrainsMono Nerd Font";
   font-weight: normal;
   font-size: 12px;
+  min-height: 0;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 1);
-  /* background: #191724; */
+  background: #000000;
 }
 
 tooltip {
-  background: rgba(0, 0, 0, 0.5);
-  color: #cdd6f4;
-  border-radius: 7px;
-  border-width: 0px;
+  background: @base;
+  border: 1px solid alpha(@iris, 0.5);
+  border-radius: 6px;
 }
 
-#workspaces button {
-  padding: 0px;
-  padding-left: 5px;
-  padding-right: 5px;
-  /*color: #585b70;*/
-  /* color: #908caa; */
-  color: rgba(0, 0, 0, 0.6);
+tooltip label {
+  color: #e0def4;
 }
 
-#workspaces button.active {
-  padding: 0px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #191724;
-  border-radius: 10px;
-}
+/* ---- Pills ---------------------------------------------------------- */
 
-#workspaces button:hover {
-  padding: 0px;
-  border-radius: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  /* color: #e0def4; */
-  color: #191724;
-}
-
-#workspaces button.urgent {
-  color: #f38ba8;
-}
-
-#battery,
-#cpu,
-#custom-disk-root,
-#custom-disk-home,
-#memory,
-#backlight,
-#clock,
-#tray,
-#pulseaudio,
-#custom-clock,
-#custom-menu,
-#custom-power,
-#custom-weather,
-#custom-updater,
-#custom-keybindings,
-#custom-notification,
-#custom-cycle_wall,
-#custom-spotify,
 #workspaces,
+#cpu,
+#temperature,
+#memory,
 #custom-gpu-usage,
 #custom-gpu-ram,
 #window,
-#temperature,
-#network {
-  /* color: #e0def4; */
-  color: #000000;
-  background: rgba(25, 25, 125, 1);
-  opacity: 1;
-  /* margin: 3px 0px 3px 0px; */
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-right: 5px;
-  margin-left: 5px;
-  margin-top: 6px;
-  margin-bottom: 2px;
-  border-radius: 2px;
-}
-
-#workspaces {
-  /* background: rgba(235, 188, 186, 1); */
-  background: #f6c177;
+#custom-spotify,
+#disk,
+#battery,
+#network,
+#pulseaudio,
+#backlight,
+#custom-notification,
+#tray,
+#clock {
+  color: @text;
+  padding: 0 8px;
+  margin: 4px 4px;
+  border-radius: 3px;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 #cpu,
-#memory,
 #temperature,
-#custom-gpu-ram,
-#custom-gpu-usage {
-  background: rgba(235, 188, 186, 1);
-  /* background: #9ccfd8; */
+#memory,
+#custom-gpu-usage,
+#custom-gpu-ram {
+  background: @rose;
 }
 
-#custom-spotify,
-#window {
-  background: #c4a7e7;
-}
-
-#battery,
-#custom-disk-root,
-#custom-disk-home {
-  background: #8caaee;
-}
-
-#clock,
-#tray,
-#pulseaudio,
-#custom-clock,
-#network,
-#custom-notification,
-#backlight {
-  /* background: #908caa; */
-  background: #9ccfd8;
-}
-
-#custom-clock {
-  background: #a6d189;
-}
-
-#custom-l_end,
-#custom-r_end,
-#custom-sl_end,
-#custom-sr_end,
-#custom-rl_end,
-#custom-rr_end {
-  color: #ffffff;
-  background: #000000;
-  opacity: 1;
-  margin: 2px 0px 2px 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-right: 0px;
-}
-
-#window {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-#battery.critical:not(.charging) {
-  background-color: #f38ba8;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+#window,
+#custom-spotify {
+  background: @iris;
 }
 
 #custom-spotify {
-  border-radius: 21px 21px 21px 21px;
+  border-radius: 12px;
 }
 
-#custom-r_end {
-  border-radius: 0px 21px 21px 0px;
-  margin-right: 9px;
-  padding-right: 3px;
+/* No title pill on an empty workspace */
+window#waybar.empty #window {
+  background: transparent;
+  padding: 0;
+  margin: 0;
 }
 
-#custom-l_end {
-  border-radius: 21px 0px 0px 21px;
-  margin-left: 9px;
-  padding-left: 3px;
+#disk,
+#battery {
+  background: @pine;
 }
 
-#custom-sr_end {
-  border-radius: 0px;
-  margin-right: 9px;
-  padding-right: 3px;
+#network,
+#pulseaudio,
+#backlight,
+#custom-notification,
+#tray {
+  background: @foam;
 }
 
-#custom-sl_end {
-  border-radius: 0px;
-  margin-left: 9px;
-  padding-left: 3px;
+#clock {
+  background: @leaf;
 }
 
-#custom-rr_end {
-  border-radius: 0px 7px 7px 0px;
-  margin-right: 9px;
-  padding-right: 3px;
+/* ---- Workspaces ----------------------------------------------------- */
+
+#workspaces {
+  background: @gold;
+  padding: 0 2px;
 }
 
-#custom-rl_end {
-  border-radius: 7px 0px 0px 7px;
-  margin-left: 9px;
-  padding-left: 3px;
+#workspaces button {
+  color: alpha(@text, 0.55);
+  padding: 0 6px;
+  margin: 2px 0;
+  border-radius: 2px;
+  background: transparent;
+  box-shadow: none;
+}
+
+#workspaces button:hover {
+  background: alpha(@text, 0.12);
+  color: @text;
+}
+
+#workspaces button.active {
+  background: @base;
+  color: @gold;
+}
+
+#workspaces button.urgent {
+  background: @love;
+  color: @base;
+}
+
+/* ---- States --------------------------------------------------------- */
+
+#cpu.warning,
+#memory.warning,
+#battery.warning:not(.charging) {
+  background: @gold;
+}
+
+#cpu.critical,
+#memory.critical,
+#temperature.critical,
+#network.disconnected,
+#network.disabled {
+  background: @love;
+}
+
+#pulseaudio.muted {
+  background: alpha(@foam, 0.5);
+}
+
+#battery.charging,
+#battery.plugged {
+  background: @leaf;
+}
+
+@keyframes blink {
+  to {
+    background: @base;
+    color: @love;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background: @love;
+  animation: blink 0.5s linear infinite alternate;
+}
+
+#tray > .needs-attention {
+  background: @love;
 }

@@ -1,159 +1,115 @@
 {
-  "backlight": {
-    "interval": 5,
-    "align": 0,
-    "rotate": 0,
-      "format": "{icon} {percent}",
-      "format-icons": ["󱩏", "󱩑", "󱩔", "󱩖"],
-      "on-click": "",
-      "on-click-middle": "",
-      "on-click-right": "",
-      "on-update": "",
-      "on-scroll-up": "~/.config/hypr/scripts/brightness --inc",
-      "on-scroll-down": "~/.config/hypr/scripts/brightness --dec",
-      "smooth-scrolling-threshold": 1,
-    },
-
-  "hyprland/window": {
-    "format": "{}",
-    "separate-outputs": true,
-  },
-
   "hyprland/workspaces": {
-    "format": "{icon}",
+    "format": "{name}",
     "on-click": "activate",
     "all-outputs": true,
     "sort-by-number": true,
-    "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10": "10",
-      "focused": "",
-      "default": ""
-    },
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'"
   },
-
-  // "hyprland/workspaces": {
-  //  "disable-scroll": true,
-  //  "all-outputs": false,
-  //  "on-click": "activate",
-  //  "format": "{name}",
-  //  "persistent-workspaces":
-  //  {
-  //      "DP-3":[1,2,3,4,5],
-  //      "HDMI-A-1":[6,7,8,9,10],
-  //  }
-  // },
-
-  "battery": {
-	"interval": 10,
-	//"align": 0,
-	//"rotate": 0,
-	//"bat": "BAT1",
-	//"adapter": "ACAD",
-	"full-at": 100,
-	"design-capacity": false,
-      "states": {
-	"good": 95,
-	"warning": 30,
-	"critical": 15
-    },
-    "format": "{icon} {capacity}",
-    "format-charging": " {capacity}",
-    "format-plugged": " {capacity}",
-    "format-full": "{icon} Full",
-    //"format-good": "",
-    "format-alt": "{icon} {time}",
-    "format-icons": [" ", " ", " ", " ", " "],
-    "format-time": "{H}h {M}min",
-    "tooltip": true,
-    //"on-click-right": "~/.config/hypr/scripts/glassmorphismToggle"
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 60,
+    "separate-outputs": true
   },
-
-  "clock": {
-      "format": "{:%I:%M %p}",
-      "rotate": 0,
-      "format-alt": "{:%R 󰃭 %d·%m·%y}",
-      "tooltip-format": "<tt>{calendar}</tt>",
-      "calendar": {
-	  "mode": "month",
-	  "mode-mon-col": 3,
-	  "on-scroll": 1,
-	  "on-click-right": "mode",
-	  "format": {
-	      "months": "<span color='#ffead3'><b>{}</b></span>",
-	      "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-	      "today": "<span color='#ff6699'><b>{}</b></span>"
-	  }
-      },
-      "actions": {
-	  "on-click-right": "mode",
-	  "on-click-forward": "tz_up",
-	  "on-click-backward": "tz_down",
-	  "on-scroll-up": "shift_up",
-	  "on-scroll-down": "shift_down"
-      }
-  },
-
   "cpu": {
     "format": "CPU {usage}%",
-    "interval": 1,
+    "interval": 2,
+    "states": {
+      "warning": 70,
+      "critical": 90
+    }
   },
-
-  "custom/clock": {
-	"exec": "date +'%a %d %b %H:%M'",
-	"interval": 10,
-   },
-
-  "custom/disk-root": {
-    "interval": 10,
-    "exec": "df -h | awk '$NF==\"/\"{printf \"%d\", $5}'",
-    "format": "ROOT {}%",
-    "return type": "",
-  },
-
-  "custom/disk-home": {
-    "interval": 10,
-    "exec": "df -h | awk '$NF==\"/home\"{printf \"%d\", $5}'",
-    "format": "HOME {}%",
-    "return type": "",
-  },
-
   "memory": {
-    "interval": 1,
-    //"format": " {percentage}",
-    "exec": "free -m | awk 'NR==2{printf \"%2d\", $3*100/$2}'",
-    "format": "RAM {}%",
+    "format": "RAM {percentage}%",
+    "interval": 5,
+    "tooltip-format": "{used:0.1f} / {total:0.1f} GiB used",
+    "states": {
+      "warning": 75,
+      "critical": 90
+    }
   },
-
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "TEMP {temperatureC}°C",
+    "interval": 5
+  },
+  "custom/gpu-usage": {
+    "exec-if": "command -v nvidia-smi",
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | awk '{printf \"%d\", $1}'",
+    "format": "GPU {}%",
+    "interval": 2,
+    "tooltip": false
+  },
+  "custom/gpu-ram": {
+    "exec-if": "command -v nvidia-smi",
+    "exec": "nvidia-smi --query-gpu=utilization.memory --format=csv,noheader,nounits | awk '{printf \"%d\", $1}'",
+    "format": "VRAM {}%",
+    "interval": 2,
+    "tooltip": false
+  },
+  "custom/spotify": {
+    "exec": "/usr/bin/python3 ~/.config/hypr/scripts/mediaplayer.py --player spotify",
+    "format": "{}  ",
+    "return-type": "json",
+    "max-length": 50,
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+  "disk#root": {
+    "path": "/",
+    "format": "ROOT {percentage_used}%",
+    "interval": 30,
+    "tooltip-format": "{used} / {total} used on {path}"
+  },
+  "disk#home": {
+    "path": "/home",
+    "format": "HOME {percentage_used}%",
+    "interval": 30,
+    "tooltip-format": "{used} / {total} used on {path}"
+  },
+  "battery": {
+    "interval": 10,
+    "full-at": 100,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-full": "{icon} Full",
+    "format-alt": "{icon} {time}",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ],
+    "format-time": "{H}h {M}min",
+    "tooltip-format": "{timeTo} · {power:0.1f} W"
+  },
   "network": {
     "interval": 10,
     "format-wifi": " ",
-    // "format-ethernet": "󰈀 {ipaddr}/{cidr}",
     "format-ethernet": "󰈀",
     "format-linked": "󰈀 {ifname} (No IP)",
-    "format-disconnected": "󰤭 Disconnected",
-    "format-disabled": "󰤭 Disabled",
-    "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
-    "tooltip-format": " {ifname} via {gwaddr}",
-    "on-click-right": "nmtui"
+    "format-disconnected": "󰤭",
+    "format-disabled": "󰤭",
+    "format-alt": " {bandwidthUpBits} ·  {bandwidthDownBits}",
+    "tooltip-format-wifi": " {essid} ({signalStrength}%) · {ipaddr}",
+    "tooltip-format-ethernet": "󰈀 {ifname} · {ipaddr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click-right": "nm-connection-editor"
   },
-
   "pulseaudio": {
-    "format": "{icon} {volume} {format_source}",
-    "format-muted": " Mute",
+    "format": "{icon} {volume}% {format_source}",
+    "format-muted": " Mute {format_source}",
     "format-bluetooth": " {volume}% {format_source}",
-    "format-bluetooth-muted": " Mute",
-    "format-source": " {volume}",
+    "format-bluetooth-muted": " Mute {format_source}",
+    "format-source": " {volume}%",
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",
@@ -162,64 +118,44 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["󰕿", "󰖀", "󰕾"]
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
     },
+    "tooltip-format": "{desc}",
     "scroll-step": 5.0,
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol",
     "on-scroll-up": "~/.config/hypr/scripts/volume --inc",
     "on-scroll-down": "~/.config/hypr/scripts/volume --dec",
-    "smooth-scrolling-threshold": 1,
+    "smooth-scrolling-threshold": 1
   },
-
-  "tray": {
-    "icon-size": 18,
-    "spacing": 6
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󱩏",
+      "󱩑",
+      "󱩔",
+      "󱩖"
+    ],
+    "on-scroll-up": "~/.config/hypr/scripts/brightness --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/brightness --dec",
+    "smooth-scrolling-threshold": 1
   },
-
-  "custom/spotify": {
-    "exec": "/usr/bin/python3 /home/weygoldt/.config/hypr/scripts/mediaplayer.py --player spotify",
-    "format": "{}  ",
-    "return-type": "json",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous"
-  },
-
-  "custom/gpu-usage": {
-    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | awk '{printf \"%2d\", $1}'",
-    "format": "GPU {}%",
-    "return-type": "",
-    "interval": 1
-  },
-
-  "custom/gpu-ram": {
-    "exec": "nvidia-smi --query-gpu=utilization.memory --format=csv,noheader,nounits | awk '{printf \"%2d\", $1}'", 
-    "format": "VRAM {}%",
-    "return-type": "",
-    "interval": 1
-  },
-
- "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    "critical-threshold": 80,
-    "format-critical": "TEMP {temperatureC}°C",
-    "format": "TEMP {temperatureC}°C"
-  },
-
   "custom/notification": {
     "tooltip": false,
-    "format": " {icon}",
+    "format": "{icon}",
     "format-icons": {
-      "notification": " <span foreground='white'><sup></sup></span>",
-      "none": " ",
-      "dnd-notification": " <span foreground='white'><sup></sup></span>",
-      "dnd-none": " ",
-      "inhibited-notification": " <span foreground='white'><sup></sup></span>",
-      "inhibited-none": " ",
-      "dnd-inhibited-notification": " <span foreground='white'><sup></sup></span>",
-      "dnd-inhibited-none": " "
+      "notification": " <span foreground='#eb6f92'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": " <span foreground='#eb6f92'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": " <span foreground='#eb6f92'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": " <span foreground='#eb6f92'><sup></sup></span>",
+      "dnd-inhibited-none": ""
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -228,5 +164,27 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+  "clock": {
+    "format": "{:%a %d %b %H:%M}",
+    "format-alt": "{:%R 󰃭 %d·%m·%y}",
+    "interval": 30,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ebbcba'><b>{}</b></span>",
+        "weekdays": "<span color='#f6c177'><b>{}</b></span>",
+        "today": "<span color='#eb6f92'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  }
 }
