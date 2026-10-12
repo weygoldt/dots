@@ -26,7 +26,7 @@ local tmux_picker = scriptsDir .. "/tmux_picker.sh"
 -- Default apps
 local term = "kitty"
 local files = "kitty --class Files --title Files -e yazi"
-local browser = "zen-browser"
+local browser = "firefox"
 local editor = "kitty --class Nvim --title Nvim -e nvim"
 local music = "spotify --ozone-platform=wayland --enable-features=UseOzonePlatform"
 local audio = "pavucontrol"

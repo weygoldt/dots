@@ -23,7 +23,7 @@ systems.
 - **Notifications**: [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter)
 - **Wallpapers**: [awww](https://archlinux.org/packages/?name=awww) (formerly swww)
 - **Code editor**: [Neovim](https://neovim.io/), based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) (separate [nvimdots](https://github.com/weygoldt/nvimdots) submodule)
-- **Browser**: [Zen](https://zen-browser.app/) w/ [Vimium](https://github.com/philc/vimium)
+- **Browser**: [Firefox](https://www.mozilla.org/firefox/) w/ [Vimium](https://github.com/philc/vimium)
 
 **Screenshots**
 

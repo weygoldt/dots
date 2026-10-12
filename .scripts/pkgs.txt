@@ -187,7 +187,6 @@ xorg-xinit
 zathura
 zathura-djvu
 zathura-pdf-poppler
-zen-browser-bin
 zotero-beta-bin
 zoxide
 zram-generator

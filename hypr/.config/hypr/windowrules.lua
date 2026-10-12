@@ -82,7 +82,6 @@ local opacity_apps = {
 	"nwg-look",
 	"qt5ct",
 	"org.pwmt.zathura",
-	"zen",
 	"com.obsproject.Studio",
 	"Signal",
 	"pavucontrol",
