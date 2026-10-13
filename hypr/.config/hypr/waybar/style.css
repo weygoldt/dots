@@ -23,6 +23,7 @@
 
 window#waybar {
   background: #000000;
+  border-top: 1px solid alpha(#e0def4, 0.06);
 }
 
 tooltip {
@@ -48,7 +49,10 @@ tooltip label {
 #custom-power {
   color: @text;
   margin: 4px 3px;
-  border-radius: 3px;
+  border-radius: 6px;
+  /* glassy sheen: light gradient + top highlight over the pill colour */
+  background-image: linear-gradient(to bottom, alpha(#ffffff, 0.16), alpha(#ffffff, 0) 60%);
+  box-shadow: inset 0 1px alpha(#ffffff, 0.35), 0 1px 2px alpha(#000000, 0.5);
 }
 
 /* modules inside a group pill */
@@ -76,6 +80,18 @@ tooltip label {
   padding: 0 3px;
 }
 
+#temperature,
+#memory,
+#custom-gpu-usage,
+#custom-gpu-ram,
+#disk.home,
+#battery,
+#pulseaudio,
+#backlight,
+#tray {
+  border-left: 1px solid alpha(@text, 0.15);
+}
+
 #window,
 #custom-spotify,
 #clock {
@@ -92,7 +108,7 @@ tooltip label {
 }
 
 #custom-spotify {
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 /* No title pill on an empty workspace */
@@ -137,8 +153,9 @@ window#waybar.empty #window {
 #workspaces button {
   color: alpha(@text, 0.55);
   padding: 0 6px;
-  margin: 2px 0;
-  border-radius: 2px;
+  margin: 2px 1px;
+  border-radius: 4px;
+  transition: background-color 150ms ease, color 150ms ease;
   background: transparent;
   box-shadow: none;
 }
@@ -151,6 +168,7 @@ window#waybar.empty #window {
 #workspaces button.active {
   background: @base;
   color: @gold;
+  box-shadow: inset 0 -2px @gold;
 }
 
 #workspaces button.urgent {
