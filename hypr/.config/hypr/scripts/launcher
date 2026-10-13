@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# App launcher: sway-launcher-desktop (fzf) in a dedicated kitty window.
+# The window is floated/sized by the "sway-launcher" rule in windowrules.lua.
+# Follows the wallpaper palette when waybar-wal is on.
+
+kitty_opts=(
+	-o font_size=11
+	-o window_padding_width=16
+	-o cursor_shape=beam
+	-o cursor_blink_interval=0
+)
+
+WAL_KITTY="$HOME/.cache/wal/colors-kitty.conf"
+if [[ -f ${XDG_STATE_HOME:-$HOME/.local/state}/waybar-wal-enabled && -f $WAL_KITTY ]]; then
+	kitty_opts+=(-o "include=$WAL_KITTY")
+fi
+
+# Nerd Font glyphs as escapes so they survive editing
+export GLYPH_PROMPT=$'\uf002  '      # magnifier
+export GLYPH_DESKTOP=$'\uf135  '     # rocket
+export GLYPH_COMMAND=$'\uf120  '     # terminal
+# Prompt on top, slim pointer, no counters (explicit flags of the launcher still win)
+export FZF_DEFAULT_OPTS=$'--layout=reverse --pointer=\u258c --no-scrollbar --no-separator --info=hidden --preview-window=noinfo --gutter=" "'
+
+exec kitty --class Launcher --title Launcher "${kitty_opts[@]}" -e sway-launcher-desktop

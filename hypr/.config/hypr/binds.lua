@@ -89,7 +89,7 @@ hl.bind("ALT + SHIFT + tab", hl.dsp.focus({ workspace = "m-1" }))
 -- Launchers
 ----------------------------------------------------------------------
 
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("kitty --class Launcher --title Launcher -e sway-launcher-desktop"))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(H.scriptsDir .. "/launcher"))
 
 -- Wallpaper, lockscreen, logout, color picker
 hl.bind(mainMod .. " + W",         hl.dsp.exec_cmd("python " .. H.wallpaper .. " --path " .. H.wallpapersDir))
