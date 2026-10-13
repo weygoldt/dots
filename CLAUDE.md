@@ -14,6 +14,7 @@ Everything is driven by the `Makefile` at the repo root. The current working dir
 - `make <package>` — stow a single package, e.g. `make nvim`, `make hypr`, `make zsh`.
 - `make update` — re-stow everything (`stow -R`); use this after adding/removing files inside a package so symlinks reflect the new tree.
 - `make clean` — unstow everything (`stow -D`); leaves the repo intact but removes the symlinks from `$HOME`.
+- `make check` — dry run of `make update`; shows what stow would change without touching `$HOME`.
 
 Submodule note: `nvim/.config/nvim` is a git submodule pointing at `weygoldt/nvimdots`. After a fresh clone, run `git submodule update --init --recursive` before `make nvim`.
 

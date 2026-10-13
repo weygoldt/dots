@@ -8,20 +8,24 @@ HOSTNAME := $(shell uname -n)
 # Get the current directory
 DOTFILES_DIR := $(shell pwd)
 
-# Find all directories in the dotfiles directory that are not hidden or the .git directory
-WORK_OVERRIDES := $(shell find $(DOTFILES_DIR) -maxdepth 1 -type d -name "*-work" -exec basename {} \;)
-HOME_OVERRIDES := $(shell find $(DOTFILES_DIR) -maxdepth 1 -type d -name "*-home" -exec basename {} \;)
-PROGRAMS := $(shell find $(DOTFILES_DIR) -maxdepth 1 -type d -name "*" -exec basename {} \; | grep -vE '(\.git|\.|home|work)')
+# Packages: every non-hidden top-level directory. Host overrides are the
+# ones ending in -home / -work; everything else is a generic package.
+PACKAGES := $(shell find $(DOTFILES_DIR) -mindepth 1 -maxdepth 1 -type d ! -name '.*' -exec basename {} \; | sort)
+WORK_OVERRIDES := $(filter %-work,$(PACKAGES))
+HOME_OVERRIDES := $(filter %-home,$(PACKAGES))
+PROGRAMS := $(filter-out %-work %-home,$(PACKAGES))
 
 # Check if the current host is the work or home machine
 ifeq ($(HOSTNAME),$(HOME_HOSTNAME))
 OVERRIDES := $(HOME_OVERRIDES)
 else ifeq ($(HOSTNAME),$(WORK_HOSTNAME))
 OVERRIDES := $(WORK_OVERRIDES)
+else
+$(warning Unknown host '$(HOSTNAME)': no -home/-work overrides will be stowed (see HOME_HOSTNAME/WORK_HOSTNAME))
 endif
 
 # Define the targets that do not correspond to files
-.PHONY: all $(PROGRAMS) $(OVERRIDES)
+.PHONY: all update clean check $(PROGRAMS) $(OVERRIDES)
 
 # Target to stow all program configurations and host-specific overrides
 all: $(PROGRAMS) $(OVERRIDES)
@@ -45,3 +49,7 @@ update:
 clean:
 	@echo "Unstowing all program configurations and host-specific overrides..."
 	@stow -d $(DOTFILES_DIR) -D $(PROGRAMS) $(OVERRIDES)
+
+# Dry run: show what update would change without touching $(HOME)
+check:
+	@stow -d $(DOTFILES_DIR) -n -v -R $(PROGRAMS) $(OVERRIDES)
