@@ -32,6 +32,14 @@ The `Makefile` picks the right override set by matching `uname -n` against two h
 
 Only directories ending in `-home` or `-work` are treated as overrides. If you add a new host or rename a machine, update the Makefile constants — there is no auto-detection beyond hostname match. The same pattern is used for `git-home`/`git-work` and `ssh-home`/`ssh-work`.
 
+## Secrets
+
+Nothing secret lives in the repo tree, not even gitignored:
+
+- `ssh-home/` / `ssh-work/` contain only `.ssh/config`. Keys and `known_hosts` live in a real `~/.ssh` (mode 700); the Makefile creates it before stowing so stow never folds `~/.ssh` into a repo symlink. `.gitignore` ignores everything else under `ssh-*/.ssh/`.
+- API keys go in `~/.local/share/secrets/env` (mode 600), sourced by `.zshrc` if present.
+- Keys are plain files, not 1Password (its agent is awkward over ssh).
+
 ## Stow ignore rules
 
 `.stow-local-ignore` excludes meta-directories (`.scripts/`, `.system/`, `.assets/`, `.git`, `*.org`) from symlinking. These live at the repo root and are *not* stowed:

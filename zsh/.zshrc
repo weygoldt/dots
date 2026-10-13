@@ -1,6 +1,9 @@
 # source zsh aliases
 source $HOME/.config/zsh/zsh_aliases
 
+# Secrets (API keys etc.), kept outside the dotfiles repo
+[[ -r $HOME/.local/share/secrets/env ]] && source $HOME/.local/share/secrets/env
+
 # History (kept in XDG state dir, out of the dotfiles tree)
 HISTFILE=${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history
 [[ -d ${HISTFILE:h} ]] || mkdir -p ${HISTFILE:h}

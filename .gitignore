@@ -1,5 +1,7 @@
 *nohup.out
 .ruff_cache/
-qutebrowser/.config/qutebrowser/rosepine
-.ssh
 __pycache__/
+qutebrowser/.config/qutebrowser/rosepine
+# ssh packages track only config; keys never belong in the repo
+ssh-*/.ssh/*
+!ssh-*/.ssh/config

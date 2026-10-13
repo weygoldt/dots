@@ -1,7 +1,4 @@
 # VARIABLES --------------------------------------------------------------------
-# Source my API keys
-source $HOME/.config/zsh/api_keys
-
 phonepath=$HOME/Phone
 scriptspath=$HOME/.scripts
 unipath=$HOME/Uni

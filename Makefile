@@ -31,8 +31,11 @@ endif
 all: $(PROGRAMS) $(OVERRIDES)
 
 # Stow the host-specific overrides and program configurations
+# ~/.ssh must be a real 700 dir before stowing ssh-*, otherwise stow folds it
+# into a symlink to the repo and new keys would be written into the repo.
 $(OVERRIDES):
 	@echo "Stowing $@ for host $(HOSTNAME)..."
+	@$(if $(filter ssh-%,$@),install -d -m 700 $(HOME)/.ssh)
 	@stow -d $(DOTFILES_DIR) -S $@
 
 # Stow the program configurations
@@ -43,6 +46,7 @@ $(PROGRAMS):
 # Update the symlinks for all programs and host-specific overrides
 update:
 	@echo "Updating symlinks for all programs and host-specific overrides..."
+	@$(if $(filter ssh-%,$(OVERRIDES)),install -d -m 700 $(HOME)/.ssh)
 	@stow -d $(DOTFILES_DIR) -R $(PROGRAMS) $(OVERRIDES)
 
 # Unstow all program configurations and host-specific overrides
