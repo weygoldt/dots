@@ -1,75 +1,69 @@
-/* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
-/* pywal-wlogout */
+/* Power menu: a row of quiet cards that light up in the bar's palette.
+   The @define-color block is swapped for wallpaper colours when waybar-wal is on. */
 
-/* Importing pywal colors */
+@define-color base #191724;
+@define-color text #191724;
+@define-color gold #f6c177;
+@define-color rose #ebbcba;
+@define-color love #eb6f92;
+@define-color iris #c4a7e7;
+@define-color foam #9ccfd8;
+@define-color pine #8caaee;
+@define-color leaf #a6d189;
 
-@import '../../.cache/wal/colors-waybar.css';
-
-window {
-    font-family: Fira Code Medium;
-    font-size: 16pt;
-    color:  @foreground; /* text */
-    background-color: rgba(24, 27, 32, 0.2);
-
-} 
-
-button {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20%;
-    background-color: transparent;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s ease-in;
-    box-shadow: 0 0 10px 2px transparent;
-    border-radius: 36px;
-    margin: 10px;
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+  box-shadow: none;
+  text-shadow: none;
 }
 
+window {
+  background-color: alpha(@base, 0.55);
+}
+
+button {
+  color: alpha(#e0def4, 0.6);
+  background-color: alpha(#e0def4, 0.06);
+  border: 1px solid alpha(#e0def4, 0.08);
+  border-radius: 6px;
+  background-repeat: no-repeat;
+  background-position: center 38%;
+  background-size: 22%;
+  padding-top: 70px;
+  padding-left: 0;
+  padding-right: 0;
+  min-width: 100px; /* > widest label, so all cards stretch equally to CARD_W */
+  transition: background-color 150ms ease, background-size 150ms ease, color 150ms ease;
+}
+
+/* keyboard focus: outline only, so it never competes with the hovered card */
 button:focus {
-    box-shadow: none;
-    background-size : 20%;
+  outline: none;
+  border-color: alpha(#e0def4, 0.45);
+  color: #e0def4;
 }
 
 button:hover {
-    background-size: 50%;
-    box-shadow: 0 0 10px 3px rgba(0,0,0,.4);
-    background-color: @color6;
-    color: transparent;
-    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.5s ease-in;
+  color: @text;
+  background-size: 25%;
+  border-color: transparent;
 }
 
-#shutdown {
-    background-image: image(url("./icons/power.png"));
-}
-#shutdown:hover {
-  background-image: image(url("./icons/power-hover.png"));
-}
+#lock:hover     { background-color: @foam; }
+#logout:hover   { background-color: @iris; }
+#suspend:hover  { background-color: @pine; }
+#reboot:hover   { background-color: @gold; }
+#shutdown:hover { background-color: @love; }
 
-#logout {
-    background-image: image(url("./icons/logout.png"));
+#lock     { background-image: image(url("./icons/lock.png")); }
+#logout   { background-image: image(url("./icons/logout.png")); }
+#suspend  { background-image: image(url("./icons/sleep.png")); }
+#reboot   { background-image: image(url("./icons/restart.png")); }
+#shutdown { background-image: image(url("./icons/power.png")); }
 
-}
-#logout:hover {
-  background-image: image(url("./icons/logout-hover.png"));
-}
-
-#reboot {
-    background-image: image(url("./icons/restart.png"));
-}
-#reboot:hover {
-  background-image: image(url("./icons/restart-hover.png"));
-}
-
-#lock {
-    background-image: image(url("./icons/lock.png"));
-}
-#lock:hover {
-  background-image: image(url("./icons/lock-hover.png"));
-}
-
-#hibernate {
-    background-image: image(url("./icons/hibernate.png"));
-}
-#hibernate:hover {
-  background-image: image(url("./icons/hibernate-hover.png"));
-}
+#lock:hover     { background-image: image(url("./icons/lock-hover.png")); }
+#logout:hover   { background-image: image(url("./icons/logout-hover.png")); }
+#suspend:hover  { background-image: image(url("./icons/sleep-hover.png")); }
+#reboot:hover   { background-image: image(url("./icons/restart-hover.png")); }
+#shutdown:hover { background-image: image(url("./icons/power-hover.png")); }
