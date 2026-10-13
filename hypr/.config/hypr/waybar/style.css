@@ -1,4 +1,7 @@
-/* Rose Pine pastel pills on a black bar */
+/* Rose Pine pastel pills on a black bar.
+   Related modules share one pill (waybar groups); labels are dimmed in the
+   module formats so values carry the weight. The @define-color block is
+   swapped for wallpaper colours when waybar-wal is on. */
 
 @define-color base #191724;
 @define-color text #191724;
@@ -35,33 +38,51 @@ tooltip label {
 /* ---- Pills ---------------------------------------------------------- */
 
 #workspaces,
+#stats,
+#window,
+#custom-spotify,
+#storage,
+#controls,
+#notify,
+#clock,
+#custom-power {
+  color: @text;
+  margin: 4px 3px;
+  border-radius: 3px;
+}
+
+/* modules inside a group pill */
 #cpu,
 #temperature,
 #memory,
 #custom-gpu-usage,
 #custom-gpu-ram,
-#window,
-#custom-spotify,
 #disk,
 #battery,
 #network,
 #pulseaudio,
 #backlight,
 #custom-notification,
-#tray,
-#clock {
+#tray {
   color: @text;
-  padding: 0 8px;
-  margin: 4px 4px;
+  padding: 0 6px;
   border-radius: 3px;
-  transition: background-color 200ms ease, color 200ms ease;
 }
 
-#cpu,
-#temperature,
-#memory,
-#custom-gpu-usage,
-#custom-gpu-ram {
+#stats,
+#storage,
+#controls,
+#notify {
+  padding: 0 3px;
+}
+
+#window,
+#custom-spotify,
+#clock {
+  padding: 0 9px;
+}
+
+#stats {
   background: @rose;
 }
 
@@ -81,21 +102,29 @@ window#waybar.empty #window {
   margin: 0;
 }
 
-#disk,
-#battery {
+#storage {
   background: @pine;
 }
 
-#network,
-#pulseaudio,
-#backlight,
-#custom-notification,
-#tray {
+#controls,
+#notify {
   background: @foam;
 }
 
 #clock {
   background: @leaf;
+}
+
+#custom-power {
+  color: #e0def4;
+  background: alpha(#e0def4, 0.08);
+  padding: 0 10px;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+#custom-power:hover {
+  color: @base;
+  background: @love;
 }
 
 /* ---- Workspaces ----------------------------------------------------- */
@@ -129,7 +158,7 @@ window#waybar.empty #window {
   color: @base;
 }
 
-/* ---- States --------------------------------------------------------- */
+/* ---- States: light up the affected segment inside its pill ---------- */
 
 #cpu.warning,
 #memory.warning,
@@ -146,12 +175,12 @@ window#waybar.empty #window {
 }
 
 #pulseaudio.muted {
-  background: alpha(@foam, 0.5);
+  color: alpha(@text, 0.5);
 }
 
 #battery.charging,
 #battery.plugged {
-  background: @leaf;
+  background: alpha(@leaf, 0.9);
 }
 
 @keyframes blink {

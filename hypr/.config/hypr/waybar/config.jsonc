@@ -8,7 +8,7 @@
   "spacing": 0,
   "fixed-center": true,
 
-  "modules-left": ["hyprland/workspaces", "cpu", "temperature", "memory", "custom/gpu-usage", "custom/gpu-ram"],
+  "modules-left": ["hyprland/workspaces", "group/stats"],
   "modules-center": ["hyprland/window", "custom/spotify"],
-  "modules-right": ["disk#root", "disk#home", "battery", "network", "pulseaudio", "backlight", "custom/notification", "tray", "clock"]
+  "modules-right": ["group/storage", "group/controls", "group/notify", "clock", "custom/power"]
 }
