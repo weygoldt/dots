@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# Opt-in waybar colours from the current wallpaper (pywal).
+# Enabled per machine via a state file outside the repo; `off` restores
+# the stock style.css exactly.
+#
+#   waybar-wal on            enable and colour the bar from the current wallpaper
+#   waybar-wal off           disable, back to style.css
+#   waybar-wal toggle
+#   waybar-wal apply [IMG]   recolour (no-op while disabled); used by set_wallpaper.py
+#   waybar-wal status
+
+STATE=${XDG_STATE_HOME:-$HOME/.local/state}/waybar-wal-enabled
+OUT=${XDG_CACHE_HOME:-$HOME/.cache}/waybar/style-wal.css
+BASE=$HOME/.config/hypr/waybar/style.css
+SCRIPTS=$HOME/.config/hypr/scripts
+
+current_wallpaper() {
+	awww query 2>/dev/null | sed -n 's/.*currently displaying: image: //p' | head -n1
+}
+
+# -n -s -t -e: only write ~/.cache/wal; leave wallpaper, terminals, tty alone
+generate() {
+	local img=${1:-$(current_wallpaper)}
+	[[ -f $img ]] || { echo "waybar-wal: no wallpaper image found" >&2; return 1; }
+	wal -n -s -t -e -q -i "$img" &&
+		python3 -I "$SCRIPTS/wal_waybar_css.py" "$HOME/.cache/wal/colors.json" "$BASE" "$OUT"
+}
+
+restart_bar() {
+	pkill -x waybar
+	sleep 0.3
+	setsid -f "$SCRIPTS/statusbar" >/dev/null 2>&1
+}
+
+case $1 in
+on)
+	command -v wal >/dev/null || { echo "waybar-wal: pywal (wal) not installed" >&2; exit 1; }
+	mkdir -p "${STATE%/*}"
+	generate || exit 1
+	touch "$STATE"
+	restart_bar
+	;;
+off)
+	rm -f "$STATE"
+	restart_bar
+	;;
+toggle)
+	if [[ -f $STATE ]]; then "$0" off; else "$0" on; fi
+	;;
+apply)
+	[[ -f $STATE ]] || exit 0
+	generate "$2" && pkill -SIGUSR2 -x waybar # reload style in place
+	;;
+status)
+	if [[ -f $STATE ]]; then echo "on ($OUT)"; else echo "off"; fi
+	;;
+*)
+	sed -n '2,11p' "$0" | sed 's/^# \{0,1\}//'
+	exit 1
+	;;
+esac

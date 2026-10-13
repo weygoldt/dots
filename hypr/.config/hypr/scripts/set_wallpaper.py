@@ -3,6 +3,7 @@
 import os
 import argparse
 import random
+import subprocess
 
 
 def main():
@@ -35,6 +36,11 @@ def main():
     os.system(
         f'awww img "{args.path}/{image}" --transition-type "{transition}" --transition-step "{smoothness}" --transition-fps "{fps}" --transition-duration "{duration}"'
     )
+
+    # Recolour waybar from the new wallpaper (no-op unless waybar-wal is on)
+    waybar_wal = os.path.join(os.path.dirname(os.path.abspath(__file__)), "waybar-wal")
+    if os.access(waybar_wal, os.X_OK):
+        subprocess.run([waybar_wal, "apply", os.path.join(args.path, image)])
 
 
 if __name__ == "__main__":
