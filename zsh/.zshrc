@@ -1,10 +1,16 @@
 # source zsh aliases
 source $HOME/.config/zsh/zsh_aliases
 
-# History in cache directory:
-HISTFILE=$HOME/.config/zsh/zsh_history
+# History (kept in XDG state dir, out of the dotfiles tree)
+HISTFILE=${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history
+[[ -d ${HISTFILE:h} ]] || mkdir -p ${HISTFILE:h}
 HISTSIZE=1000000
 SAVEHIST=1000000
+setopt EXTENDED_HISTORY       # Save timestamps and durations
+setopt SHARE_HISTORY          # Share history between running shells
+setopt HIST_IGNORE_ALL_DUPS   # Drop older duplicates of a command
+setopt HIST_IGNORE_SPACE      # Don't save commands starting with a space
+setopt HIST_REDUCE_BLANKS
 
 # SFW mode (hypr/scripts/sfw): new shells start with an empty, unsaved
 # history, no autosuggestions and an empty zoxide; the real files stay untouched.
@@ -20,7 +26,8 @@ fi
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+[[ -d ${XDG_CACHE_HOME:-$HOME/.cache}/zsh ]] || mkdir -p ${XDG_CACHE_HOME:-$HOME/.cache}/zsh
+compinit -d ${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump
 _comp_options+=(globdots) # Include hidden files.
 
 # Plugins
@@ -31,49 +38,22 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 unsetopt BEEP
 
 # Export envvars
+typeset -U path # Keep PATH free of duplicates in nested shells
+path=($HOME/.local/bin $HOME/.npm-global/bin $path) # User binaries
 export EDITOR='/usr/bin/nvim' # Editor
 export VISUAL='/usr/bin/nvim' # Visual editor
-export PATH="$HOME/.local/bin:$PATH" # For user binaries
 export PAGER="most" # color manpages
-# export SSH_AUTH_SOCK=~/.1password/agent.sock # For 1password to manage ssh keys
-# export PATH="$HOME/.pyenv/bin:$PATH" # For pyenv
-export VIRTUAL_ENV_DISABLE_PROMPT=tr # For starship prompt 
-# export TERM="xterm-kitty" # For kitty terminal
+export VIRTUAL_ENV_DISABLE_PROMPT=1 # For starship prompt
 export RANGER_LOAD_DEFAULT_RC=false # For ranger
 
 # Keybindings
 bindkey -v # enable vim mode
-bindkey ^R history-incremental-search-backward 
+bindkey ^R history-incremental-search-backward
 bindkey ^S history-incremental-search-forward
 bindkey '^ ' autosuggest-accept # bind strg+space to accept
-
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-
-fpath+=~/.zfunc
-
-autoload -Uz compinit && compinit
-
-# if [ -f "/home/weygoldt/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/weygoldt/.config/fabric/fabric-bootstrap.inc"; fi
-
-# # >>> conda initialize >>>
-# # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/weygoldt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/weygoldt/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/weygoldt/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/weygoldt/miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# # <<< conda initialize <<<
 
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 eval "$(direnv hook zsh)"
-export PATH=~/.npm-global/bin:$PATH
