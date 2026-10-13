@@ -9,7 +9,7 @@ local HOME = os.getenv("HOME")
 local mainMod = "SUPER"
 local scriptsDir = HOME .. "/.config/hypr/scripts"
 local hyprDir = HOME .. "/.config/hypr"
-local wallpapersDir = HOME .. "/.config/hypr/wallpapers"
+local wallpapersDir = HOME .. "/Pictures/wallpapers"
 local windowOpacity = 0.75
 
 -- Desktop environment scripts

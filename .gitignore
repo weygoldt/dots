@@ -1,5 +1,5 @@
-hypr/.config/hypr/wallpapers/*
 *nohup.out
+.ruff_cache/
 qutebrowser/.config/qutebrowser/rosepine
 .ssh
 __pycache__/

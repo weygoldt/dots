@@ -22,7 +22,7 @@ Submodule note: `nvim/.config/nvim` is a git submodule pointing at `weygoldt/nvi
 Some configs differ between machines. The convention is `<base>-home/` and `<base>-work/` packages alongside the generic `<base>/`:
 
 - Generic package (e.g. `hypr/`) holds shared config.
-- `hypr-home/`, `hypr-work/` hold only the files that differ (e.g. `monitors.lua`, `hyprpaper.conf`).
+- `hypr-home/`, `hypr-work/` hold only the files that differ (e.g. `monitors.lua`).
 
 The `Makefile` picks the right override set by matching `uname -n` against two hardcoded hostnames at the top of the file:
 

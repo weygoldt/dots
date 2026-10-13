@@ -16,7 +16,7 @@ BACKUP=(
     $HOME/.config
     $HOME/thesis
     $HOME/.dotfiles
-    $HOME/.wallpapers
+    $HOME/Pictures/wallpapers
     $HOME/obsidian
     $HOME/personal
     $HOME/projects
