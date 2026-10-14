@@ -66,7 +66,10 @@ gtk_apply() {
 	# Theme: only adw-gtk3 understands the libadwaita colour names on GTK3
 	if [[ -d /usr/share/themes/$GTK_THEME ]]; then
 		for f in "${GTK_FILES[0]}" "${GTK_FILES[1]}"; do
-			[[ -f $f ]] || continue
+			if [[ ! -f $f ]]; then # fresh machine: create it (restore removes it again)
+				mkdir -p "${f%/*}"
+				printf '[Settings]\n' >"$f"
+			fi
 			if grep -q '^gtk-theme-name=' "$f"; then
 				sed -i "s|^gtk-theme-name=.*|gtk-theme-name=$GTK_THEME|" "$f"
 			else # plain GTK4 apps only follow the theme when it is named here
