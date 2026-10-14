@@ -1,0 +1,10 @@
+[Unit]
+Description=borg backup of home to the backup drive
+# skip runs on battery; the next daily run catches up
+ConditionACPower=true
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/backup-home
+Nice=19
+IOSchedulingClass=idle

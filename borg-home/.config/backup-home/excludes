@@ -1,0 +1,20 @@
+# borg exclude patterns for backup-home: everything here can be re-created
+# (caches, trash, package downloads, toolchains, build trees, virtualenvs).
+# Directories with a CACHEDIR.TAG are skipped too (--exclude-caches).
+sh:home/*/.cache
+sh:home/*/.local/share/Trash
+sh:home/*/.local/share/baloo
+sh:home/*/.local/share/uv
+sh:home/*/.npm
+sh:home/*/.cargo/registry
+sh:home/*/.rustup
+sh:home/*/go/pkg
+sh:home/*/aur-builds
+sh:home/*/.local/share/Steam
+sh:**/node_modules
+sh:**/.venv
+sh:**/__pycache__
+sh:**/.mypy_cache
+sh:**/.pytest_cache
+sh:**/.ruff_cache
+sh:**/.tox

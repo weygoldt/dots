@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+# borg backup of $HOME to the laptop's internal backup drive (/mnt/data1).
+# Home machine only (borg-home package); a daily systemd user timer runs it.
+#
+#   backup-home              create an archive, then prune and compact
+#   backup-home init         create the repository (once)
+#   backup-home list         list archives
+#   backup-home info         repository size, deduplicated
+#   backup-home mount DIR    browse all archives under DIR (borg umount DIR)
+#   backup-home key-export   print the repo key, to keep with the passphrase
+#
+# The passphrase lives in ~/.local/state/backup-home/passphrase (never in the
+# repo); keep a copy in your password manager, without it the backup is lost.
+
+set -uo pipefail
+
+export BORG_REPO=${BORG_REPO:-/mnt/data1/borg/home}
+STATE=${XDG_STATE_HOME:-$HOME/.local/state}/backup-home
+PASSFILE=$STATE/passphrase
+EXCLUDES=$HOME/.config/backup-home/excludes
+export BORG_PASSCOMMAND="cat $PASSFILE"
+
+notify() { # urgency text
+	command -v notify-send >/dev/null && notify-send -u "$1" -a backup "Backup" "$2"
+	echo "backup-home: $2" >&2
+}
+
+need_repo() {
+	[[ -f $BORG_REPO/config ]] || { notify critical "no repository at $BORG_REPO (drive not mounted? run 'backup-home init' once)"; exit 2; }
+}
+
+case ${1:-create} in
+init)
+	mkdir -p "$STATE" && chmod 700 "$STATE"
+	if [[ ! -f $PASSFILE ]]; then
+		(umask 077 && openssl rand -base64 32 >"$PASSFILE")
+		echo "New passphrase in $PASSFILE: save it in your password manager."
+	fi
+	mkdir -p "$BORG_REPO" || exit 1
+	borg init --encryption=repokey-blake2 "$BORG_REPO"
+	;;
+create)
+	need_repo
+	borg create --stats --compression zstd,3 --one-file-system \
+		--exclude-caches --exclude-from "$EXCLUDES" \
+		'::{hostname}-{now:%Y-%m-%dT%H:%M}' "$HOME"
+	rc=$?
+	if ((rc > 1)); then # 1 = warnings, e.g. a file changed while reading
+		notify critical "borg create failed (exit $rc), see: journalctl --user -u backup-home"
+		exit $rc
+	fi
+	borg prune --list --glob-archives '{hostname}-*' \
+		--keep-daily 7 --keep-weekly 4 --keep-monthly 6 || notify normal "borg prune failed"
+	borg compact || notify normal "borg compact failed"
+	exit $rc
+	;;
+list) need_repo; borg list ;;
+info) need_repo; borg info ;;
+mount) need_repo; mkdir -p "${2:?mount DIR}" && borg mount :: "$2" ;;
+key-export) need_repo; borg key export --paper ;;
+*)
+	sed -n '2,13p' "$0" | sed 's/^# \{0,1\}//'
+	exit 1
+	;;
+esac

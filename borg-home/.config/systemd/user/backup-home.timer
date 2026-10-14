@@ -1,0 +1,11 @@
+[Unit]
+Description=daily borg backup of home
+
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=30min
+# missed while the laptop was off or asleep: run soon after it is back
+Persistent=true
+
+[Install]
+WantedBy=timers.target
