@@ -1,0 +1,23 @@
+# Apps the launcher does not list (desktop file IDs, see scripts/launcher-apps).
+# They stay installed and usable everywhere else ("Open with", file types, ...).
+assistant.desktop                                  # Qt Assistant
+avahi-discover.desktop                             # Avahi Zeroconf Browser
+bssh.desktop                                       # Avahi SSH Server Browser
+bvnc.desktop                                       # Avahi VNC Server Browser
+cmake-gui.desktop                                  # CMake
+designer.desktop                                   # Qt Widgets Designer
+kde_wacom_tabletfinder.desktop                     # Wacom Tablet finder
+linguist.desktop                                   # Qt Linguist
+lstopo.desktop                                     # Hardware Locality lstopo
+org.kde.drkonqi.coredump.gui.desktop               # Crashed Processes Viewer
+org.kde.kmenuedit.desktop                          # Menu Editor
+org.kde.plasma-welcome.desktop                     # Welcome Center
+org.torproject.torbrowser-launcher.settings.desktop # Tor Browser Launcher Settings
+qdbusviewer.desktop                                # Qt D-Bus Viewer
+qv4l2.desktop                                      # Qt V4L2 test Utility
+qvidcap.desktop                                    # Qt V4L2 video capture utility
+uuctl.desktop                                      # uuctl
+xdvi.desktop                                       # XDvi
+xgps.desktop                                       # xgps
+xgpsspeed.desktop                                  # xgpsspeed
+zen.desktop                                        # Zen Browser

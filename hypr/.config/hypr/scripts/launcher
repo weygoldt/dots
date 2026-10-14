@@ -12,6 +12,11 @@ kitty_opts=(
 # Plain commands (not .desktop apps) are started in a terminal; $TERMINAL is unset
 export TERMINAL_COMMAND="kitty -e"
 
+# Only list installed apps, minus launcher/hidden-apps.txt (no PATH commands)
+export PROVIDERS_FILE=$HOME/.config/hypr/launcher/providers.conf
+# ...and keep the usual history file (its default name depends on PROVIDERS_FILE)
+export HIST_FILE=${XDG_CACHE_HOME:-$HOME/.cache}/sway-launcher-desktop-history.txt
+
 # SFW mode: separate, temporary history. It lists the same apps as the real
 # one, so apps still rank above plain commands, but with neutral counts (no
 # usage order on show) and Firefox pointing at the clean-profile override.

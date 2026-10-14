@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# App list for the launcher: all desktop entries minus launcher/hidden-apps.txt.
+HIDDEN=$HOME/.config/hypr/launcher/hidden-apps.txt
+
+# "/ID<field separator>" anchors each ID to the end of the entry's file path
+patterns=$(sed -E 's/#.*//; s/[[:space:]]+//g; /^$/d; s|^|/|; s|$|\x1c|' "$HIDDEN" 2>/dev/null)
+if [[ -n $patterns ]]; then
+	sway-launcher-desktop list-entries | grep -avF -- "$patterns"
+else
+	sway-launcher-desktop list-entries
+fi
