@@ -12,6 +12,9 @@
 @define-color foam #9ccfd8;
 @define-color pine #8caaee;
 @define-color leaf #a6d189;
+/* state colours: fixed, also in wal mode, so green/amber/red always mean the same */
+@define-color ok #a6d189;
+@define-color warn #f6c177;
 
 * {
   border: none;
@@ -188,7 +191,7 @@ window#waybar.empty #window {
 #cpu.warning,
 #memory.warning,
 #battery.warning:not(.charging) {
-  background: @gold;
+  background: @warn;
 }
 
 #cpu.critical,
@@ -205,7 +208,7 @@ window#waybar.empty #window {
 
 #battery.charging,
 #battery.plugged {
-  background: alpha(@leaf, 0.9);
+  background: alpha(@ok, 0.9);
 }
 
 @keyframes blink {

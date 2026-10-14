@@ -26,6 +26,7 @@ MAPPING = {
     "leaf": "color2",  # clock
 }
 LOVE = "#eb6f92"  # critical states stay red regardless of wallpaper
+STATES = {"ok": "#a6d189", "warn": "#f6c177"}  # likewise green / amber
 
 
 def hex_to_rgb(h):
@@ -77,7 +78,7 @@ def main(colors_json, base_css, out_css):
     # Dark text/base taken from the wallpaper, forced dark enough for pills
     base = darken_until(hex_to_rgb(wal["special"]["background"]))
 
-    palette = {"base": rgb_to_hex(base), "text": rgb_to_hex(base), "love": LOVE}
+    palette = {"base": rgb_to_hex(base), "text": rgb_to_hex(base), "love": LOVE, **STATES}
     for name, key in MAPPING.items():
         palette[name] = rgb_to_hex(pastel(hex_to_rgb(colors[key]), base))
 
