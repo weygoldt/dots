@@ -1,0 +1,14 @@
+# yazi config used while SFW mode is on (YAZI_CONFIG_HOME set by
+# hypr/scripts/files): no image, video or PDF previews.
+
+[plugin]
+prepend_previewers = [
+	{ mime = "image/*", run = "noop" },
+	{ mime = "video/*", run = "noop" },
+	{ mime = "application/pdf", run = "noop" },
+]
+prepend_preloaders = [
+	{ mime = "image/*", run = "noop" },
+	{ mime = "video/*", run = "noop" },
+	{ mime = "application/pdf", run = "noop" },
+]

@@ -11,8 +11,6 @@
 #   waybar-wal status
 
 STATE=${XDG_STATE_HOME:-$HOME/.local/state}/waybar-wal-enabled
-OUT=${XDG_CACHE_HOME:-$HOME/.cache}/waybar/style-wal.css
-BASE=$HOME/.config/hypr/waybar/style.css
 SCRIPTS=$HOME/.config/hypr/scripts
 
 current_wallpaper() {
@@ -24,8 +22,7 @@ generate() {
 	local img=${1:-$(current_wallpaper)}
 	[[ -f $img ]] || { echo "waybar-wal: no wallpaper image found" >&2; return 1; }
 	wal -n -s -t -e -q -i "$img" &&
-		python3 -I "$SCRIPTS/wal_waybar_css.py" "$HOME/.cache/wal/colors.json" "$BASE" "$OUT" &&
-		"$SCRIPTS/wal-apps" apply # Qt/KDE scheme, Hyprland border
+		"$SCRIPTS/wal-apps" apply # Qt/KDE scheme, GTK, Hyprland border
 }
 
 restart_bar() {
@@ -52,10 +49,10 @@ toggle)
 	;;
 apply)
 	[[ -f $STATE ]] || exit 0
-	generate "$2" && pkill -SIGUSR2 -x waybar # reload style in place
+	generate "$2" && "$SCRIPTS/waybar-style" >/dev/null && pkill -SIGUSR2 -x waybar # reload in place
 	;;
 status)
-	if [[ -f $STATE ]]; then echo "on ($OUT)"; else echo "off"; fi
+	if [[ -f $STATE ]]; then echo on; else echo off; fi
 	;;
 *)
 	sed -n '2,11p' "$0" | sed 's/^# \{0,1\}//'

@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+# SFW mode: one switch (SUPER+P) for when someone is looking at the screen.
+# Hides things instead of deleting them; `sfw off` puts everything back.
+#
+#   sfw on       jump to an empty workspace; clean Firefox profile (SUPER+B);
+#                no file previews / recent places in Dolphin, no previews in
+#                yazi (SUPER+E); new shells without history or suggestions;
+#                no window title / track in waybar; do-not-disturb on
+#   sfw off      undo all of it and jump back to where you were
+#   sfw toggle
+#   sfw status
+#
+# Per machine: state lives in ~/.local/state, never in the repo.
+
+STATE_DIR=${XDG_STATE_HOME:-$HOME/.local/state}
+FLAG=$STATE_DIR/sfw-mode       # read by zshrc, browser, files, waybar
+SAVED=$STATE_DIR/sfw-saved     # original values to restore
+HYPR=$HOME/.config/hypr
+SCRIPTS=$HYPR/scripts
+FF_PROFILE=$HOME/.mozilla/firefox/sfw
+PLACES=$HOME/.local/share/user-places.xbel
+
+save() { # key value  (first call wins, so repeated `on` keeps the real originals)
+	[[ -f $SAVED/$1 ]] || printf '%s' "$2" >"$SAVED/$1"
+}
+saved() { cat "$SAVED/$1" 2>/dev/null; }
+
+kde_get() { kreadconfig6 --file dolphinrc --group "$1" --key "$2" --default '<unset>'; }
+kde_set() { kwriteconfig6 --file dolphinrc --group "$1" --key "$2" "$3"; }
+kde_restore() { # group key savedname
+	local v
+	v=$(saved "$3") || return 0
+	if [[ $v == '<unset>' ]]; then
+		kwriteconfig6 --file dolphinrc --group "$1" --key "$2" --delete
+	else
+		kde_set "$1" "$2" "$v"
+	fi
+}
+
+places_recent_hidden() { # true|false
+	[[ -f $PLACES ]] && sed -i "s|<GroupState-RecentlySaved-IsHidden>[a-z]*<|<GroupState-RecentlySaved-IsHidden>$1<|" "$PLACES"
+}
+
+goto() { # monitor workspace
+	hyprctl dispatch "hl.dsp.focus({ monitor = \"$1\" })" >/dev/null
+	# already there? focusing again would bounce back (workspace_back_and_forth)
+	[[ $(hyprctl -j monitors | jq -r --arg m "$1" '.[] | select(.name == $m).activeWorkspace.id') == "$2" ]] ||
+		hyprctl dispatch "hl.dsp.focus({ workspace = $2 })" >/dev/null
+}
+
+hide_screens() { # every monitor gets its own fresh, empty workspace (101, 102, ...)
+	save focused-monitor "$(hyprctl -j monitors | jq -r '.[] | select(.focused).name')"
+	save workspaces "$(hyprctl -j monitors | jq -r '.[] | "\(.name) \(.activeWorkspace.id)"')"
+	local name ws i=101
+	while read -r name ws || [[ -n $name ]]; do # saved values have no final newline
+		goto "$name" "$i"
+		((i++))
+	done <"$SAVED/workspaces"
+	hyprctl dispatch "hl.dsp.focus({ monitor = \"$(saved focused-monitor)\" })" >/dev/null
+}
+
+show_screens() {
+	local name ws
+	[[ -f $SAVED/workspaces ]] || return 0
+	while read -r name ws || [[ -n $name ]]; do
+		goto "$name" "$ws"
+	done <"$SAVED/workspaces"
+	hyprctl dispatch "hl.dsp.focus({ monitor = \"$(saved focused-monitor)\" })" >/dev/null
+}
+
+refresh_bar() {
+	"$SCRIPTS/waybar-style" >/dev/null && pkill -SIGUSR2 -x waybar
+	pkill -RTMIN+9 -x waybar # indicator dot
+}
+
+on() {
+	mkdir -p "$SAVED"
+
+	# 1. Get whatever is on screen out of sight, on every monitor
+	hide_screens
+
+	touch "$FLAG" # from here on new shells, browser and file manager are clean
+
+	# 2. Firefox: clean, never-recording profile (used by scripts/browser)
+	mkdir -p "$FF_PROFILE"
+	cp "$HYPR/sfw/firefox-user.js" "$FF_PROFILE/user.js"
+
+	# 3. Dolphin: no thumbnails, start at Home, hide Recent places
+	save dolphin-plugins "$(kde_get PreviewSettings Plugins)"
+	save dolphin-remember-tabs "$(kde_get General RememberOpenedTabs)"
+	kde_set PreviewSettings Plugins directorythumbnail
+	kde_set General RememberOpenedTabs false
+	if [[ -f $PLACES ]]; then
+		save places-recent-hidden "$(sed -n 's|.*<GroupState-RecentlySaved-IsHidden>\([a-z]*\)<.*|\1|p' "$PLACES")"
+		places_recent_hidden true
+	fi
+
+	# 4. Notifications: no message previews popping up
+	if command -v swaync-client >/dev/null; then
+		save dnd "$(swaync-client -D)"
+		swaync-client -dn >/dev/null
+	fi
+
+	refresh_bar
+}
+
+off() {
+	[[ -d $SAVED ]] || { rm -f "$FLAG"; refresh_bar; return 0; }
+
+	rm -f "$FLAG"
+
+	kde_restore PreviewSettings Plugins dolphin-plugins
+	kde_restore General RememberOpenedTabs dolphin-remember-tabs
+	[[ -f $SAVED/places-recent-hidden ]] && places_recent_hidden "$(saved places-recent-hidden)"
+
+	if [[ $(saved dnd) == false ]] && command -v swaync-client >/dev/null; then
+		swaync-client -df >/dev/null
+	fi
+
+	rm -rf "${XDG_RUNTIME_DIR:-/tmp}/sfw-zoxide" # empty zoxide db of SFW shells
+	refresh_bar
+	show_screens
+	rm -rf "$SAVED"
+}
+
+case $1 in
+on) [[ -f $FLAG ]] || on ;;
+off) off ;;
+toggle) if [[ -f $FLAG ]]; then off; else on; fi ;;
+status) if [[ -f $FLAG ]]; then echo on; else echo off; fi ;;
+*)
+	sed -n '2,13p' "$0" | sed 's/^# \{0,1\}//'
+	exit 1
+	;;
+esac

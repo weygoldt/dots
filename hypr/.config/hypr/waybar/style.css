@@ -45,7 +45,7 @@ tooltip label {
 #storage,
 #controls,
 #notify,
-#clock,
+#time,
 #custom-power {
   color: @text;
   margin: 4px 3px;
@@ -98,6 +98,13 @@ tooltip label {
   padding: 0 9px;
 }
 
+/* SFW indicator: a dim dot tucked into the clock pill (empty = hidden) */
+#custom-sfw {
+  color: alpha(@text, 0.45);
+  padding: 0 8px 0 0;
+  margin-left: -5px;
+}
+
 #stats {
   background: @rose;
 }
@@ -127,7 +134,7 @@ window#waybar.empty #window {
   background: @foam;
 }
 
-#clock {
+#time {
   background: @leaf;
 }
 

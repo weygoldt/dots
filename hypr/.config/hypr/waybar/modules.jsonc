@@ -224,5 +224,18 @@
     "format": "",
     "tooltip-format": "Power menu",
     "on-click": "~/.config/hypr/scripts/wlogout"
+  },
+  "custom/sfw": {
+    "exec": "[ -f ~/.local/state/sfw-mode ] && echo '•' || true",
+    "interval": "once",
+    "signal": 9,
+    "tooltip": false
+  },
+  "group/time": {
+    "orientation": "horizontal",
+    "modules": [
+      "clock",
+      "custom/sfw"
+    ]
   }
 }

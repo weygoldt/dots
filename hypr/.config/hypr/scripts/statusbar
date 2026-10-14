@@ -1,17 +1,10 @@
 #!/usr/bin/env bash
 
 CONFIG="$HOME/.config/hypr/waybar/config.jsonc"
-STYLE="$HOME/.config/hypr/waybar/style.css"
 
-# Wallpaper colours (opt-in, see waybar-wal)
-WAL_STYLE="${XDG_CACHE_HOME:-$HOME/.cache}/waybar/style-wal.css"
-WAL_COLORS="$HOME/.cache/wal/colors.json"
-if [[ -f ${XDG_STATE_HOME:-$HOME/.local/state}/waybar-wal-enabled && -f $WAL_COLORS ]]; then
-	# Rebuild from the cached palette so edits to style.css are picked up
-	python3 -I "$HOME/.config/hypr/scripts/wal_waybar_css.py" "$WAL_COLORS" "$STYLE" "$WAL_STYLE" &&
-		STYLE=$WAL_STYLE
-fi
+# style.css + wallpaper palette (waybar-wal) + SFW overlay (sfw), see waybar-style
+STYLE=$("$HOME/.config/hypr/scripts/waybar-style")
 
 if [[ ! $(pidof waybar) ]]; then
-	waybar --bar main-bar --log-level error --config ${CONFIG} --style ${STYLE}
+	waybar --bar main-bar --log-level error --config "$CONFIG" --style "$STYLE"
 fi

@@ -1,0 +1,14 @@
+
+/* ---- SFW mode (appended by scripts/waybar-style while `sfw` is on) ---- */
+
+/* hide what is playing / focused */
+#window,
+#custom-spotify {
+  font-size: 0;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  box-shadow: none;
+  background-image: none;
+}

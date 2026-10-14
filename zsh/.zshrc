@@ -6,6 +6,15 @@ HISTFILE=$HOME/.config/zsh/zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+# SFW mode (hypr/scripts/sfw): new shells start with an empty, unsaved
+# history, no autosuggestions and an empty zoxide; the real files stay untouched.
+if [[ -f $HOME/.local/state/sfw-mode ]]; then
+	SFW_MODE=1
+	unset HISTFILE
+	export _ZO_DATA_DIR=${XDG_RUNTIME_DIR:-/tmp}/sfw-zoxide
+	mkdir -p "$_ZO_DATA_DIR"
+fi
+
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -14,7 +23,7 @@ compinit
 _comp_options+=(globdots) # Include hidden files.
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+[[ -z $SFW_MODE ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Turn off all beeps

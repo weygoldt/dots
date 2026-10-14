@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Build the stylesheet waybar actually loads (~/.cache/waybar/style.css):
+#   style.css  ->  wallpaper palette if waybar-wal is on  ->  + sfw.css if sfw is on
+# Prints the path. Callers reload a running bar with `pkill -SIGUSR2 -x waybar`.
+
+STATE_DIR=${XDG_STATE_HOME:-$HOME/.local/state}
+CACHE=${XDG_CACHE_HOME:-$HOME/.cache}/waybar
+BAR=$HOME/.config/hypr/waybar
+WAL_COLORS=$HOME/.cache/wal/colors.json
+OUT=$CACHE/style.css
+
+mkdir -p "$CACHE"
+src=$BAR/style.css
+
+if [[ -f $STATE_DIR/waybar-wal-enabled && -f $WAL_COLORS ]]; then
+	python3 -I "$HOME/.config/hypr/scripts/wal_waybar_css.py" "$WAL_COLORS" "$src" "$CACHE/style-wal.css" &&
+		src=$CACHE/style-wal.css
+fi
+
+{
+	cat "$src"
+	if [[ -f $STATE_DIR/sfw-mode ]]; then cat "$BAR/sfw.css"; fi
+} >"$OUT.tmp" && mv "$OUT.tmp" "$OUT"
+
+echo "$OUT"

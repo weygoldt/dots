@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Browser launcher (SUPER+B): the clean SFW Firefox profile while `sfw` is on.
+if [[ -f ${XDG_STATE_HOME:-$HOME/.local/state}/sfw-mode ]]; then
+	exec firefox --profile "$HOME/.mozilla/firefox/sfw" "$@"
+fi
+exec firefox "$@"

@@ -46,6 +46,9 @@ hl.bind(mainMod .. " + Space",     hl.dsp.exec_cmd(H.scriptsDir .. "/changeLayou
 hl.bind(mainMod .. " + Escape",    hl.dsp.exec_cmd("hyprctl kill"))
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exit())
 
+-- SFW mode: hide anything you would not want to show someone (scripts/sfw)
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(H.scriptsDir .. "/sfw toggle"))
+
 ----------------------------------------------------------------------
 -- Special workspace
 ----------------------------------------------------------------------
