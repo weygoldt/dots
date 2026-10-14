@@ -9,6 +9,12 @@ kitty_opts=(
 	-o cursor_blink_interval=0
 )
 
+# SFW mode: separate, temporary history (the real one lists system .desktop
+# paths that would bypass the clean-browser override, and shows what you use)
+if [[ -f ${XDG_STATE_HOME:-$HOME/.local/state}/sfw-mode ]]; then
+	export HIST_FILE=${XDG_RUNTIME_DIR:-/tmp}/sfw-launcher-history.txt
+fi
+
 # Nerd Font glyphs as escapes so they survive editing
 export GLYPH_PROMPT=$'\uf002  '      # magnifier
 export GLYPH_DESKTOP=$'\uf135  '     # rocket

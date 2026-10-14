@@ -2,7 +2,8 @@
 # SFW mode: one switch (SUPER+P) for when someone is looking at the screen.
 # Hides things instead of deleting them; `sfw off` puts everything back.
 #
-#   sfw on       jump to an empty workspace; clean Firefox profile (SUPER+B);
+#   sfw on       jump to an empty workspace; clean Firefox profile (SUPER+B,
+#                launcher, links from other apps);
 #                no file previews / recent places in Dolphin, no previews in
 #                yazi (SUPER+E); new shells without history or suggestions;
 #                no window title / track in waybar; do-not-disturb on
@@ -19,6 +20,8 @@ HYPR=$HOME/.config/hypr
 SCRIPTS=$HYPR/scripts
 FF_PROFILE=$HOME/.mozilla/firefox/sfw
 PLACES=$HOME/.local/share/user-places.xbel
+FF_DESKTOP=$HOME/.local/share/applications/firefox.desktop
+FF_MARK="# sfw-override: written by hypr/scripts/sfw, removed by sfw off"
 
 save() { # key value  (first call wins, so repeated `on` keeps the real originals)
 	[[ -f $SAVED/$1 ]] || printf '%s' "$2" >"$SAVED/$1"
@@ -84,6 +87,16 @@ on() {
 	# 2. Firefox: clean, never-recording profile (used by scripts/browser)
 	mkdir -p "$FF_PROFILE"
 	cp "$HYPR/sfw/firefox-user.js" "$FF_PROFILE/user.js"
+	# ...also for the launcher and links opened from other apps: a user-level
+	# firefox.desktop shadows the system one (never clobber a file we did not write)
+	if [[ ! -e $FF_DESKTOP ]] && [[ -f /usr/share/applications/firefox.desktop ]]; then
+		mkdir -p "${FF_DESKTOP%/*}"
+		{
+			echo "$FF_MARK"
+			sed "s|^Exec=/usr/lib/firefox/firefox|Exec=$SCRIPTS/browser|" /usr/share/applications/firefox.desktop
+		} >"$FF_DESKTOP"
+		(kbuildsycoca6 >/dev/null 2>&1 &) # KDE apps resolve handlers through this cache
+	fi
 
 	# 3. Dolphin: no thumbnails, start at Home, hide Recent places
 	save dolphin-plugins "$(kde_get PreviewSettings Plugins)"
@@ -109,6 +122,11 @@ off() {
 
 	rm -f "$FLAG"
 
+	if [[ -f $FF_DESKTOP ]] && [[ $(head -1 "$FF_DESKTOP") == "$FF_MARK" ]]; then
+		rm -f "$FF_DESKTOP"
+		(kbuildsycoca6 >/dev/null 2>&1 &)
+	fi
+
 	kde_restore PreviewSettings Plugins dolphin-plugins
 	kde_restore General RememberOpenedTabs dolphin-remember-tabs
 	[[ -f $SAVED/places-recent-hidden ]] && places_recent_hidden "$(saved places-recent-hidden)"
@@ -117,7 +135,7 @@ off() {
 		swaync-client -df >/dev/null
 	fi
 
-	rm -rf "${XDG_RUNTIME_DIR:-/tmp}/sfw-zoxide" # empty zoxide db of SFW shells
+	rm -rf "${XDG_RUNTIME_DIR:-/tmp}/sfw-zoxide" "${XDG_RUNTIME_DIR:-/tmp}/sfw-launcher-history.txt"
 	refresh_bar
 	show_screens
 	rm -rf "$SAVED"
