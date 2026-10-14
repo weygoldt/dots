@@ -9,10 +9,21 @@ kitty_opts=(
 	-o cursor_blink_interval=0
 )
 
-# SFW mode: separate, temporary history (the real one lists system .desktop
-# paths that would bypass the clean-browser override, and shows what you use)
+# Plain commands (not .desktop apps) are started in a terminal; $TERMINAL is unset
+export TERMINAL_COMMAND="kitty -e"
+
+# SFW mode: separate, temporary history. It lists the same apps as the real
+# one, so apps still rank above plain commands, but with neutral counts (no
+# usage order on show) and Firefox pointing at the clean-profile override.
 if [[ -f ${XDG_STATE_HOME:-$HOME/.local/state}/sfw-mode ]]; then
 	export HIST_FILE=${XDG_RUNTIME_DIR:-/tmp}/sfw-launcher-history.txt
+	REAL_HIST=${XDG_CACHE_HOME:-$HOME/.cache}/sway-launcher-desktop-history.txt
+	if [[ ! -s $HIST_FILE && -f $REAL_HIST ]]; then
+		# main app entries only (no "New Window"-style actions), sorted by name
+		grep -a $'\034desktop\034' "$REAL_HIST" | grep -av $'\034desktop\034[^\034]*\034' |
+			sed -E "s/^[0-9]+ /1 /; s|/usr/share/applications/firefox.desktop|$HOME/.local/share/applications/firefox.desktop|" |
+			LC_ALL=C sort -t $'\034' -k3,3 >"$HIST_FILE"
+	fi
 fi
 
 # Nerd Font glyphs as escapes so they survive editing
