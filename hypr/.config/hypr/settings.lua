@@ -2,8 +2,8 @@
 
 hl.config({
 	general = {
-		gaps_in = 0,
-		gaps_out = 0,
+		gaps_in = 3, -- 6px between windows
+		gaps_out = 6, -- single windows stay edge to edge (workspacerules.lua)
 		border_size = 2,
 		col = {
 			-- active_border   = { colors = { "rgba(24bbffaa)", "rgba(ff3dcfaa)" }, angle = 45 },
@@ -14,7 +14,7 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 0,
+		rounding = 6, -- matches the waybar pills and wlogout cards
 		blur = {
 			enabled = true,
 			xray = true,
