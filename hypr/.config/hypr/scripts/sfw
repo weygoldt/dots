@@ -4,8 +4,8 @@
 #
 #   sfw on       jump to an empty workspace; clean Firefox profile (SUPER+B,
 #                launcher, links from other apps);
-#                no file previews / recent places in Dolphin, no previews in
-#                yazi (SUPER+E); new shells without history or suggestions;
+#                no file previews / recent places in Dolphin (SUPER+E), new
+#                shells without history, suggestions or yazi previews;
 #                no window title / track in waybar; do-not-disturb on
 #   sfw off      undo all of it and jump back to where you were
 #   sfw toggle

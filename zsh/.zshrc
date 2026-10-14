@@ -13,6 +13,7 @@ if [[ -f $HOME/.local/state/sfw-mode ]]; then
 	unset HISTFILE
 	export _ZO_DATA_DIR=${XDG_RUNTIME_DIR:-/tmp}/sfw-zoxide
 	mkdir -p "$_ZO_DATA_DIR"
+	export YAZI_CONFIG_HOME=$HOME/.config/hypr/sfw/yazi # yazi without media previews
 fi
 
 # Basic auto/tab complete:

@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# File manager launcher (SUPER+E): yazi in kitty, without media previews while `sfw` is on.
-if [[ -f ${XDG_STATE_HOME:-$HOME/.local/state}/sfw-mode ]]; then
-	export YAZI_CONFIG_HOME=$HOME/.config/hypr/sfw/yazi
-fi
-exec kitty --class Files --title Files -e yazi "$@"
+# File manager launcher (SUPER+E): Dolphin. SFW mode needs nothing extra here:
+# `sfw on` already turns off Dolphin's previews and recent places.
+exec dolphin "$@"

@@ -1,5 +1,5 @@
-# yazi config used while SFW mode is on (YAZI_CONFIG_HOME set by
-# hypr/scripts/files): no image, video or PDF previews.
+# yazi config used while SFW mode is on (YAZI_CONFIG_HOME set by the SFW
+# block in .zshrc): no image, video or PDF previews.
 
 [plugin]
 prepend_previewers = [

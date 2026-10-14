@@ -25,7 +25,7 @@ local tmux_picker = scriptsDir .. "/tmux_picker.sh"
 
 -- Default apps
 local term = "kitty"
-local files = scriptsDir .. "/files" -- yazi; no media previews in SFW mode
+local files = scriptsDir .. "/files" -- Dolphin
 local browser = scriptsDir .. "/browser" -- clean profile in SFW mode
 local editor = "kitty --class Nvim --title Nvim -e nvim"
 local music = "spotify --ozone-platform=wayland --enable-features=UseOzonePlatform"
