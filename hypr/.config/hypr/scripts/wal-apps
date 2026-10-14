@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Theme apps from the pywal palette; called by waybar-wal (on/apply/off).
-#   wal-apps apply     Qt/KDE colour scheme, Hyprland border
-#   wal-apps restore   put the previous qt6ct scheme and border back
+#   wal-apps apply     Qt/KDE colour scheme, GTK (adw-gtk3 + colours), Hyprland border
+#   wal-apps restore   put the previous qt6ct/GTK settings and border back
 #
-# Qt apps pick up the scheme when they (re)start; Hyprland changes live.
+# Qt and GTK apps pick up the colours when they (re)start; Hyprland changes live.
 # kitty deliberately keeps its own theme: wal palettes are too low-contrast
 # for a terminal.
 
@@ -13,6 +13,16 @@ WAL_JSON=$HOME/.cache/wal/colors.json
 
 QT6CT=$HOME/.config/qt6ct/qt6ct.conf
 WAL_SCHEME=$HOME/.local/share/color-schemes/Wal.colors
+
+# GTK settings live in several places; all are saved before the first change
+GTK_THEME=adw-gtk3-dark
+GTK_FILES=(
+	"$HOME/.config/gtk-3.0/settings.ini"
+	"$HOME/.config/gtk-4.0/settings.ini"
+	"$HOME/.config/gtk-3.0/gtk.css"
+	"$HOME/.config/gtk-4.0/gtk.css"
+	"$HOME/.local/share/nwg-look/gsettings" # re-applied by `nwg-look -a` at login
+)
 
 mkdir -p "$STATE"
 
@@ -37,8 +47,59 @@ apply() {
 	qt_set color_scheme_path "$WAL_SCHEME"
 	qt_set custom_palette true
 
+	gtk_apply
+
 	# Hyprland: active border in the accent colour
 	hyprctl eval "hl.config({ general = { col = { active_border = \"rgba(${accent#\#}cc)\" } } })" >/dev/null
+}
+
+gtk_apply() {
+	local f i
+	if [[ ! -d $STATE/gtk.orig ]]; then
+		mkdir -p "$STATE/gtk.orig"
+		for i in "${!GTK_FILES[@]}"; do
+			[[ -f ${GTK_FILES[$i]} ]] && cp -p "${GTK_FILES[$i]}" "$STATE/gtk.orig/$i"
+		done
+		gsettings get org.gnome.desktop.interface gtk-theme >"$STATE/gtk.orig/gsettings-theme"
+	fi
+
+	# Theme: only adw-gtk3 understands the libadwaita colour names on GTK3
+	if [[ -d /usr/share/themes/$GTK_THEME ]]; then
+		for f in "${GTK_FILES[0]}" "${GTK_FILES[1]}"; do
+			[[ -f $f ]] || continue
+			if grep -q '^gtk-theme-name=' "$f"; then
+				sed -i "s|^gtk-theme-name=.*|gtk-theme-name=$GTK_THEME|" "$f"
+			else # plain GTK4 apps only follow the theme when it is named here
+				sed -i "/^\[Settings\]/a gtk-theme-name=$GTK_THEME" "$f"
+			fi
+		done
+		sed -i "s|^gtk-theme=.*|gtk-theme=$GTK_THEME|" "${GTK_FILES[4]}" 2>/dev/null
+		gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
+	fi
+
+	# Colours: generated block first, then whatever the user had
+	local css v
+	for i in 2 3; do
+		f=${GTK_FILES[$i]}
+		v=$((i + 1)) # index 2 -> GTK3, 3 -> GTK4
+		css=$(python3 -I "$SCRIPTS/wal_gtk_css.py" "$WAL_JSON" /dev/stdout "$v") || return 1
+		mkdir -p "${f%/*}"
+		{ echo "$css"; [[ -f $STATE/gtk.orig/$i ]] && cat "$STATE/gtk.orig/$i"; } >"$f"
+	done
+}
+
+gtk_restore() {
+	[[ -d $STATE/gtk.orig ]] || return 0
+	local i
+	for i in "${!GTK_FILES[@]}"; do
+		if [[ -f $STATE/gtk.orig/$i ]]; then
+			cp -p "$STATE/gtk.orig/$i" "${GTK_FILES[$i]}"
+		else
+			rm -f "${GTK_FILES[$i]}" # did not exist before
+		fi
+	done
+	gsettings set org.gnome.desktop.interface gtk-theme "$(tr -d "'" <"$STATE/gtk.orig/gsettings-theme")"
+	rm -rf "$STATE/gtk.orig"
 }
 
 restore() {
@@ -46,6 +107,8 @@ restore() {
 		while IFS='=' read -r key val; do qt_set "$key" "$val"; done <"$STATE/qt6ct.orig"
 		rm -f "$STATE/qt6ct.orig"
 	fi
+
+	gtk_restore
 
 	hyprctl reload config-only >/dev/null # border back to settings.lua
 }
