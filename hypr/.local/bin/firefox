@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# `firefox` from a terminal (e.g. `firefox slides.html`): ~/.local/bin comes
+# before /usr/bin in PATH, so this picks the clean profile while SFW mode is on.
+exec "$HOME/.config/hypr/scripts/browser" "$@"
