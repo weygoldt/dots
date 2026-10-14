@@ -21,6 +21,8 @@ systems.
 - **Shell**: [Zsh](https://www.zsh.org/) w/ [starship](https://starship.rs/) prompt
 - **Launcher**: [sway-launcher-desktop](https://github.com/Biont/sway-launcher-desktop) in Kitty, [Wofi](https://hg.sr.ht/~scoopta/wofi) for menus
 - **Notifications**: [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter)
+- **Idle / lock**: [hypridle](https://github.com/hyprwm/hypridle) + [hyprlock](https://github.com/hyprwm/hyprlock) (dim 4 min, lock 5, screens off 5.5, suspend 15 on battery)
+- **Backups** (home machine): [borg](https://www.borgbackup.org/), daily user timer (`borg-home/`, `backup-home --help`)
 - **Wallpapers**: [awww](https://archlinux.org/packages/?name=awww) (formerly swww)
 - **Code editor**: [Neovim](https://neovim.io/), based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) (separate [nvimdots](https://github.com/weygoldt/nvimdots) submodule)
 - **Browser**: [Firefox](https://www.mozilla.org/firefox/) w/ [Vimium](https://github.com/philc/vimium)

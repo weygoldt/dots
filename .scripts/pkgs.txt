@@ -55,6 +55,7 @@ hdfview-bin
 htop
 hugo
 hyprland
+hypridle
 hyprlock
 hyprpaper
 hyprpicker

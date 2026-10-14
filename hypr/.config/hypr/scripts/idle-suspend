@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# hypridle: suspend after a long idle, but only on battery. Desktops (no
+# battery) and laptops on the charger stay awake, e.g. for running jobs.
+
+on_battery=false
+for ps in /sys/class/power_supply/*; do
+	case $(cat "$ps/type" 2>/dev/null) in
+	Mains) [[ $(cat "$ps/online") == 1 ]] && exit 0 ;;
+	Battery) [[ $(cat "$ps/scope" 2>/dev/null) == Device ]] || on_battery=true ;; # not a mouse
+	esac
+done
+$on_battery && systemctl suspend

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# One line for the lock screen: battery level (nothing on a desktop).
+
+for bat in /sys/class/power_supply/BAT*; do
+	[[ -f $bat/capacity ]] || continue
+	cap=$(cat "$bat/capacity")
+	if [[ $(cat "$bat/status") == Discharging ]]; then
+		icons=(󰂎 󰁺 󰁻 󰁼 󰁽 󰁾 󰁿 󰂀 󰂁 󰂂 󰁹)
+		icon=${icons[cap / 10]}
+	else
+		icon=󰂄
+	fi
+	echo "$icon  $cap%"
+	exit 0
+done

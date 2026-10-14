@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "hyprlock",
+    "action" : "~/.config/hypr/scripts/lock",
     "text" : "Lock",
     "keybind" : "l"
 }
@@ -12,7 +12,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "hyprlock & sleep 1 && systemctl suspend",
+    "action" : "~/.config/hypr/scripts/lock & sleep 1 && systemctl suspend",
     "text" : "Suspend",
     "keybind" : "u"
 }

@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Lock the session with hyprlock: CTRL+ALT+L, hypridle (idle, before sleep).
+# Extra arguments go to hyprlock (hypridle passes --grace 5 when idling).
+#
+# Writes ~/.cache/hyprlock/theme.conf first, which hyprlock.conf sources:
+# the current wallpaper (never a screenshot, so nothing on screen leaks onto
+# the lock screen) and the bar's palette, i.e. wallpaper colours while
+# waybar-wal is on, Rose Pine otherwise.
+
+pidof -q hyprlock && exit 0 # already locked
+
+CACHE=${XDG_CACHE_HOME:-$HOME/.cache}
+THEME=$CACHE/hyprlock/theme.conf
+BAR_CSS=$CACHE/waybar/style.css # built by scripts/waybar-style
+mkdir -p "${THEME%/*}"
+
+# name -> hex from the bar stylesheet, Rose Pine when it is not built yet
+declare -A c=([base]=191724 [text]=e0def4 [accent]=9ccfd8 [ok]=a6d189 [warn]=f6c177 [love]=eb6f92)
+if [[ -f $BAR_CSS ]]; then
+	while read -r _ name hex; do
+		hex=${hex%;}
+		case $name in base | ok | warn | love) c[$name]=${hex#\#} ;; foam) c[accent]=${hex#\#} ;; esac
+	done < <(grep '^@define-color ' "$BAR_CSS")
+fi
+
+wallpaper=$(awww query 2>/dev/null | sed -n 's/.*currently displaying: image: //p' | head -n1)
+
+{
+	echo "# written by hypr/scripts/lock on every lock"
+	echo "\$wallpaper = $wallpaper"
+	for k in "${!c[@]}"; do echo "\$$k = rgb(${c[$k]})"; done
+	echo "\$base_a = rgba(${c[base]}cc)"
+} >"$THEME"
+
+exec hyprlock "$@"

@@ -17,7 +17,7 @@ local powermenu = scriptsDir .. "/powermenu"
 local volume = scriptsDir .. "/volume"
 local backlight = scriptsDir .. "/brightness"
 local screenshot = scriptsDir .. "/screenshot"
-local lock = "hyprlock"
+local lock = scriptsDir .. "/lock"
 local colorpicker = "hyprpicker --autocopy"
 local wofi_beats = scriptsDir .. "/wofi-beats"
 local wallpaper = scriptsDir .. "/set_wallpaper.py"
@@ -105,7 +105,10 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("nwg-look -a")
 	hl.exec_cmd("nm-applet --indicator")
 	hl.exec_cmd(scriptsDir .. "/statusbar")
-	hl.exec_cmd("swaync")
+	-- the systemd unit, not a bare `swaync`: D-Bus would start the unit as well
+	-- (first notification) and the second copy keeps failing
+	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user start swaync")
+	hl.exec_cmd("hypridle") -- idle dim / lock / screen off / suspend: hypridle.conf
 	hl.exec_cmd(scriptsDir .. "/battery-notify") -- no-op without a battery
 	hl.exec_cmd("kbuildsycoca6")
 	hl.exec_cmd("clipse -listen")
