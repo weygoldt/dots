@@ -2,3 +2,4 @@ hypr/.config/hypr/wallpapers/*
 *nohup.out
 qutebrowser/.config/qutebrowser/rosepine
 .ssh
+__pycache__/
