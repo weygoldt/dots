@@ -7,18 +7,14 @@
 #   backup-home list         list archives
 #   backup-home info         repository size, deduplicated
 #   backup-home mount DIR    browse all archives under DIR (borg umount DIR)
-#   backup-home key-export   print the repo key, to keep with the passphrase
 #
-# The passphrase lives in ~/.local/state/backup-home/passphrase (never in the
-# repo); keep a copy in your password manager, without it the backup is lost.
+# The repository is unencrypted (no passphrase or key to lose); the drive sits
+# inside the same laptop, so encryption would not protect anything.
 
 set -uo pipefail
 
 export BORG_REPO=${BORG_REPO:-/mnt/data1/borg/home}
-STATE=${XDG_STATE_HOME:-$HOME/.local/state}/backup-home
-PASSFILE=$STATE/passphrase
 EXCLUDES=$HOME/.config/backup-home/excludes
-export BORG_PASSCOMMAND="cat $PASSFILE"
 
 notify() { # urgency text
 	command -v notify-send >/dev/null && notify-send -u "$1" -a backup "Backup" "$2"
@@ -31,13 +27,8 @@ need_repo() {
 
 case ${1:-create} in
 init)
-	mkdir -p "$STATE" && chmod 700 "$STATE"
-	if [[ ! -f $PASSFILE ]]; then
-		(umask 077 && openssl rand -base64 32 >"$PASSFILE")
-		echo "New passphrase in $PASSFILE: save it in your password manager."
-	fi
-	mkdir -p "$BORG_REPO" || exit 1
-	borg init --encryption=repokey-blake2 "$BORG_REPO"
+	mkdir -p "${BORG_REPO%/*}" || exit 1
+	borg init --encryption=none "$BORG_REPO"
 	;;
 create)
 	need_repo
@@ -57,9 +48,8 @@ create)
 list) need_repo; borg list ;;
 info) need_repo; borg info ;;
 mount) need_repo; mkdir -p "${2:?mount DIR}" && borg mount :: "$2" ;;
-key-export) need_repo; borg key export --paper ;;
 *)
-	sed -n '2,13p' "$0" | sed 's/^# \{0,1\}//'
+	sed -n '2,12p' "$0" | sed 's/^# \{0,1\}//'
 	exit 1
 	;;
 esac
