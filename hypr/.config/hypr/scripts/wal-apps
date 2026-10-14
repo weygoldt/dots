@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+# Theme apps from the pywal palette; called by waybar-wal (on/apply/off).
+#   wal-apps apply     Qt/KDE colour scheme, Hyprland border
+#   wal-apps restore   put the previous qt6ct scheme and border back
+#
+# Qt apps pick up the scheme when they (re)start; Hyprland changes live.
+# kitty deliberately keeps its own theme: wal palettes are too low-contrast
+# for a terminal.
+
+STATE=${XDG_STATE_HOME:-$HOME/.local/state}/wal-apps
+SCRIPTS=$HOME/.config/hypr/scripts
+WAL_JSON=$HOME/.cache/wal/colors.json
+
+QT6CT=$HOME/.config/qt6ct/qt6ct.conf
+WAL_SCHEME=$HOME/.local/share/color-schemes/Wal.colors
+
+mkdir -p "$STATE"
+
+qt_set() { # key value
+	[[ -f $QT6CT ]] || return 0
+	sed -i "s|^$1=.*|$1=$2|" "$QT6CT"
+}
+
+apply() {
+	[[ -f $WAL_JSON ]] || { echo "wal-apps: run wal first" >&2; return 1; }
+
+	# Qt / KDE: template = the scheme qt6ct used before wal took over
+	if [[ -f $QT6CT && ! -f $STATE/qt6ct.orig ]]; then
+		grep -E '^(color_scheme_path|custom_palette)=' "$QT6CT" >"$STATE/qt6ct.orig"
+	fi
+	local template
+	template=$(sed -n 's/^color_scheme_path=//p' "$STATE/qt6ct.orig" 2>/dev/null)
+	[[ $template == *.colors && -f $template ]] || template=/usr/share/color-schemes/BreezeDark.colors
+
+	local accent
+	accent=$(python3 -I "$SCRIPTS/wal_kde_colors.py" "$WAL_JSON" "$template" "$WAL_SCHEME") || return 1
+	qt_set color_scheme_path "$WAL_SCHEME"
+	qt_set custom_palette true
+
+	# Hyprland: active border in the accent colour
+	hyprctl eval "hl.config({ general = { col = { active_border = \"rgba(${accent#\#}cc)\" } } })" >/dev/null
+}
+
+restore() {
+	if [[ -f $STATE/qt6ct.orig ]]; then
+		while IFS='=' read -r key val; do qt_set "$key" "$val"; done <"$STATE/qt6ct.orig"
+		rm -f "$STATE/qt6ct.orig"
+	fi
+
+	hyprctl reload config-only >/dev/null # border back to settings.lua
+}
+
+case $1 in
+apply) apply ;;
+restore) restore ;;
+*)
+	sed -n '2,6p' "$0" | sed 's/^# \{0,1\}//'
+	exit 1
+	;;
+esac

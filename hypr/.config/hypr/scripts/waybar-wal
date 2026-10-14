@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Opt-in waybar colours from the current wallpaper (pywal).
+# Opt-in wallpaper colours (pywal) for waybar, plus Qt/KDE apps and
+# Hyprland borders via wal-apps.
 # Enabled per machine via a state file outside the repo; `off` restores
 # the stock style.css exactly.
 #
@@ -23,7 +24,8 @@ generate() {
 	local img=${1:-$(current_wallpaper)}
 	[[ -f $img ]] || { echo "waybar-wal: no wallpaper image found" >&2; return 1; }
 	wal -n -s -t -e -q -i "$img" &&
-		python3 -I "$SCRIPTS/wal_waybar_css.py" "$HOME/.cache/wal/colors.json" "$BASE" "$OUT"
+		python3 -I "$SCRIPTS/wal_waybar_css.py" "$HOME/.cache/wal/colors.json" "$BASE" "$OUT" &&
+		"$SCRIPTS/wal-apps" apply # Qt/KDE scheme, Hyprland border
 }
 
 restart_bar() {
@@ -42,6 +44,7 @@ on)
 	;;
 off)
 	rm -f "$STATE"
+	"$SCRIPTS/wal-apps" restore
 	restart_bar
 	;;
 toggle)
