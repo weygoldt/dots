@@ -26,6 +26,13 @@ paru -Syyu           # for all repositories
 flatpak update       # for flatpak updates
 conda update -n base -c defaults conda # to update conda 
 ```
+### Pacman hooks
+`pacman-hooks/` holds hooks that live in `/etc/pacman.d/hooks` (so they can't be stowed). Install or update them with:
+```sh
+.system/maintain-arch/pacman-hooks/install.sh
+```
+- `qt-private-api.hook`: after a `qt6-base` / `qt5-base` upgrade, lists AUR packages that use Qt's private API (e.g. `qt6ct-kde`). These break silently on every Qt update (qt6ct stops theming Qt/KDE apps) until rebuilt with `paru -S --rebuild <pkg>`.
+
 ### 4. Clean .cache
 ```sh
 du -sh .cache   # show cache size

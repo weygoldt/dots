@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = qt6-base
+Target = qt5-base
+
+[Action]
+Description = Checking for AUR packages built against Qt's private API...
+When = PostTransaction
+Exec = /etc/pacman.d/hooks.bin/qt-private-api-check
+NeedsTargets

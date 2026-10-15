@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Run by qt-private-api.hook after qt6-base / qt5-base upgrades; pacman passes
+# the upgraded package names on stdin. Run by hand with them as arguments:
+#   qt-private-api-check qt6-base
+#
+# AUR packages that link Qt's private API (qt6ct-kde, qt5ct-kde, ...) are
+# only valid for the exact Qt version they were built against. After a Qt
+# upgrade they fail to load silently, e.g. qt6ct stops theming every Qt/KDE
+# app. List those packages so they can be rebuilt.
+
+if (($#)); then targets=("$@"); else mapfile -t targets; fi
+
+markers=()
+for t in "${targets[@]}"; do
+	case $t in
+	qt6-base) markers+=(Qt_6_PRIVATE_API) ;;
+	qt5-base) markers+=(Qt_5_PRIVATE_API) ;;
+	esac
+done
+((${#markers[@]})) || exit 0
+command -v readelf >/dev/null || { echo "qt-private-api-check: readelf (binutils) missing, skipped" >&2; exit 0; }
+pattern=$(IFS='|'; echo "${markers[*]}")
+
+# Map each shared library of a foreign (AUR) package to its package, then
+# scan all of them with a single readelf call: only the version-needs
+# section is read, so this stays fast even for huge libraries.
+declare -A owner
+mapfile -t foreign < <(pacman -Qmq)
+((${#foreign[@]})) || exit 0
+while read -r pkg file; do
+	[[ $file == /usr/lib/*.so* && -f $file && ! -L $file ]] && owner[$file]=$pkg
+done < <(pacman -Ql "${foreign[@]}" | awk '$2 ~ /^\/usr\/lib\/.*\.so/')
+((${#owner[@]})) || exit 0
+
+# readelf prints "File: <path>" before each library; awk keeps the paths
+# whose version needs mention the private API.
+mapfile -t found < <(
+	readelf -V --wide "${!owner[@]}" 2>/dev/null |
+		awk -v pat="$pattern" '/^File: / { f = substr($0, 7) } $0 ~ pat && f { print f; f = "" }' |
+		while read -r file; do echo "${owner[$file]}"; done | sort -u
+)
+
+((${#found[@]})) || exit 0
+
+echo "==> ${targets[*]} upgraded. These AUR packages use its private API and must be rebuilt:"
+printf '      %s\n' "${found[@]}"
+echo "    paru -S --rebuild ${found[*]}"
