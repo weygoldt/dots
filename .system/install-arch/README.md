@@ -23,7 +23,8 @@ burn usb and boot into live environment.
     - [Generate fstab](#generate-fstab)
     - [Install basic packages](#install-basic-packages)
   - [4. Install desktop environment](#4-install-desktop-environment)
-  - [5. Install additional software](#5-install-additional-software)
+  - [5. Post-install](#5-post-install)
+    - [systemd-oomd: no more freezes when RAM runs out](#systemd-oomd-no-more-freezes-when-ram-runs-out)
 
 ## 1. Boot into the live iso
 ... and set the keymap, network, clock, etc. as follows.
@@ -168,24 +169,82 @@ cd /
 Now we should be greeted with sddm and boot into kde. Login as the created user.
 
 
-## 5. Install additional software
-Install software with the scripts provided in `arch-install/software/`. 
-Some of the install scripts (e.g. software from the AUR, conda, flatpaks) need
-user input.
+## 5. Post-install
+Sections 1-4 are kept for reference. The base system is now installed with
+`archinstall` (`hyprland` and `plasma` profiles, see the
+[root README](../../README.md)). After the first boot, run everything below from
+`~/.dotfiles`.
 
-1.  To do list after installation
-- Setup btrbk snapshots and backups
-- Clone dotfiles
-- Make sure that btrfs qgroups are disabled since they are very buggy for now:
+1. Install paru, then my packages. Keep `pkgs.txt` current with
+   `.scripts/syncpkgs.py`.
+```sh
+.scripts/installers/paru-install.sh
+paru -S --needed - < .scripts/pkgs.txt
+```
+
+2. Clone and stow the dotfiles as described in the [root README](../../README.md).
+   SSH keys go in `~/.ssh` and API keys in `~/.local/share/secrets/env`
+   (mode 600). Neither is in the repo.
+
+3. Install the files that live in `/etc` and can't be stowed:
+```sh
+.system/maintain-arch/pacman-hooks/install.sh  # pacman hooks
+.system/install-arch/oomd/install.sh           # systemd-oomd, see below
+```
+
+4. Enable services:
+```sh
+sudo systemctl enable --now NetworkManager bluetooth sshd cups avahi-daemon \
+    tlp ufw cronie systemd-timesyncd fstrim.timer paccache.timer
+sudo systemctl enable nvidia-suspend nvidia-resume nvidia-hibernate  # nvidia only
+systemctl --user enable --now backup-home.timer                     # home machine only
+```
+
+5. Firewall:
+```sh
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw limit 22/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw enable
+```
+
+6. Check that zram swap is active: `swapon --show` should list `/dev/zram0`.
+   If it doesn't, run `echo '[zram0]' | sudo tee /etc/systemd/zram-generator.conf`
+   and reboot.
+
+7. System snapshots: set up Timeshift in btrfs mode (`@` only, daily, keep 2).
+   `/home` is covered by borg instead. `cronie` must be running or the schedule
+   never fires. `timeshift-autosnap` takes a snapshot before every pacman
+   upgrade and adds it to the GRUB menu through `grub-btrfs`. Keep btrfs qgroups
+   disabled, since they are slow and buggy:
 ```sh
 sudo btrfs quota disable /
-# and repeat for all mountpoints
 ```
-- Check that ufw and zram is enabled
-- Change root and user passwords (default: password)
-- Add conky startup script to kde startup scripts in system settings
-- Get themes
-  - Global theme: https://store.kde.org/p/1633675/
-  - Icons: https://store.kde.org/p/1686927/
-  - Cursors: https://store.kde.org/p/1662218/
-- Enable iphone support: `mkdir ~/iPhone`, mount by `ifuse ~/iPhone`, dismount by `sudo umount ~/iPhone`
+
+8. Home backups (home machine only): `backup-home init` creates the borg
+   repository on `/mnt/data1` once, and the timer from step 4 does the rest.
+   See `backup-home --help`.
+
+### systemd-oomd: no more freezes when RAM runs out
+Without it, a runaway process (for example a big `cargo build` from the AUR)
+fills RAM and zram. The kernel OOM killer doesn't fire in time, and the whole
+system freezes until a hard reset. Arch ships no `ManagedOOM*` defaults, so
+enabling `systemd-oomd` on its own monitors nothing. `oomd/install.sh` installs
+the drop-ins that Fedora ships by default and enables the service:
+
+- `-.slice.d/10-oomd.conf`: once swap is more than 90% full, kill the cgroup
+  using the most swap.
+- `user@.service.d/10-oomd.conf`: kill the app in the user session whose memory
+  pressure stays above 50% for 30s. Pressure is not RAM usage. It is the share
+  of time tasks stall waiting for memory (`/proc/pressure/memory`), so using
+  all 24 GiB is fine as long as nothing is stalling. 50% means the session is
+  already thrashing.
+
+oomd kills the offender's whole cgroup (for example the terminal scope running
+the build), and the rest of the session survives. Check that it's working with
+`oomctl`. It should list `/` under "Swap Monitored CGroups" and
+`user@1000.service` under "Memory Pressure Monitored CGroups". Log out and back
+in if the second one is missing. Kills are logged in
+`journalctl -u systemd-oomd`.

@@ -96,6 +96,7 @@ obsidian
 okular
 ollama-cuda
 openvpn
+pacman-contrib
 pamixer
 pandoc-cli
 partitionmanager
