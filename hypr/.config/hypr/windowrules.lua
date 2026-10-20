@@ -81,7 +81,6 @@ local opacity_apps = {
 	"org.kde.ark",
 	"nwg-look",
 	"qt5ct",
-	"org.pwmt.zathura",
 	"com.obsproject.Studio",
 	"Signal",
 	"pavucontrol",
